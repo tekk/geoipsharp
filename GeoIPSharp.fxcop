@@ -77,8 +77,22 @@
           <Members>
            <Member Name="#ASNUM_EDITION">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
+             <Message Id="ASNUM" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>ASNUM</Item>
+               <Item>'DatabaseInfo.ASNUM_EDITION'</Item>
+               <Item>Asnum</Item>
+              </Issue>
+             </Message>
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.ASNUM_EDITION'</Item>
+               <Item>Edition</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
                <Item>'DatabaseInfo.ASNUM_EDITION'</Item>
               </Issue>
              </Message>
@@ -86,8 +100,29 @@
            </Member>
            <Member Name="#CITY_EDITION_REV0">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
+             <Message Id="CITY" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>CITY</Item>
+               <Item>'DatabaseInfo.CITY_EDITION_REV0'</Item>
+               <Item>City</Item>
+              </Issue>
+             </Message>
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.CITY_EDITION_REV0'</Item>
+               <Item>Edition</Item>
+              </Issue>
+             </Message>
+             <Message Id="REV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>REV</Item>
+               <Item>'DatabaseInfo.CITY_EDITION_REV0'</Item>
+               <Item>Rev</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
                <Item>'DatabaseInfo.CITY_EDITION_REV0'</Item>
               </Issue>
              </Message>
@@ -95,8 +130,29 @@
            </Member>
            <Member Name="#CITY_EDITION_REV1">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
+             <Message Id="CITY" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>CITY</Item>
+               <Item>'DatabaseInfo.CITY_EDITION_REV1'</Item>
+               <Item>City</Item>
+              </Issue>
+             </Message>
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.CITY_EDITION_REV1'</Item>
+               <Item>Edition</Item>
+              </Issue>
+             </Message>
+             <Message Id="REV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>REV</Item>
+               <Item>'DatabaseInfo.CITY_EDITION_REV1'</Item>
+               <Item>Rev</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
                <Item>'DatabaseInfo.CITY_EDITION_REV1'</Item>
               </Issue>
              </Message>
@@ -104,9 +160,40 @@
            </Member>
            <Member Name="#COUNTRY_EDITION">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
+             <Message Id="COUNTRY" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>COUNTRY</Item>
                <Item>'DatabaseInfo.COUNTRY_EDITION'</Item>
+               <Item>Country</Item>
+              </Issue>
+             </Message>
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.COUNTRY_EDITION'</Item>
+               <Item>Edition</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>'DatabaseInfo.COUNTRY_EDITION'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetDatabaseType()">
+            <Messages>
+             <Message Id="System.Convert.ToInt32(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2010-03-11 09:33:45Z">
+              <Issue>
+               <Item>'Convert.ToInt32(string)'</Item>
+               <Item>'DatabaseInfo.GetDatabaseType()'</Item>
+               <Item>'Convert.ToInt32(string, IFormatProvider)'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2010-03-11 09:33:45Z">
+              <Issue Name="IsNullOrEmpty">
+               <Item>'string.operator ==(string, string)'</Item>
+               <Item>'DatabaseInfo.GetDatabaseType()'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -119,59 +206,64 @@
                <Item>'Exception'</Item>
               </Issue>
              </Message>
-             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2010-03-11 08:59:54Z">
-              <Issue Certainty="50">
-               <Item>'DatabaseInfo.GetDate()'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#GetTypeCode()">
-            <Messages>
-             <Message Id="System.Convert.ToInt32(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Convert.ToInt32(string)'</Item>
-               <Item>'DatabaseInfo.GetTypeCode()'</Item>
-               <Item>'Convert.ToInt32(string, IFormatProvider)'</Item>
-              </Issue>
-             </Message>
-             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2010-03-11 08:59:54Z">
-              <Issue Name="IsNullOrEmpty">
-               <Item>'string.operator ==(string, string)'</Item>
-               <Item>'DatabaseInfo.GetTypeCode()'</Item>
-              </Issue>
-             </Message>
-             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2010-03-11 08:59:54Z">
-              <Issue Certainty="50">
-               <Item>'DatabaseInfo.GetTypeCode()'</Item>
-              </Issue>
-             </Message>
             </Messages>
            </Member>
            <Member Name="#ISP_EDITION">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.ISP_EDITION'</Item>
+               <Item>Edition</Item>
+              </Issue>
+             </Message>
+             <Message Id="ISP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>ISP</Item>
+               <Item>'DatabaseInfo.ISP_EDITION'</Item>
+               <Item>Isp</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
                <Item>'DatabaseInfo.ISP_EDITION'</Item>
               </Issue>
              </Message>
             </Messages>
            </Member>
-           <Member Name="#IsPremium()">
-            <Messages>
-             <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'DatabaseInfo.IsPremium()'</Item>
-               <Item>'string.IndexOf(string)'</Item>
-               <Item>'string.IndexOf(string, StringComparison)'</Item>
-              </Issue>
-             </Message>
-            </Messages>
+           <Member Name="#IsPremium">
+            <Accessors>
+             <Accessor Name="#get_IsPremium()">
+              <Messages>
+               <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2010-03-11 09:33:45Z">
+                <Issue>
+                 <Item>'DatabaseInfo.IsPremium.get()'</Item>
+                 <Item>'string.IndexOf(string)'</Item>
+                 <Item>'string.IndexOf(string, StringComparison)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
            </Member>
            <Member Name="#NETSPEED_EDITION">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.NETSPEED_EDITION'</Item>
+               <Item>Edition</Item>
+              </Issue>
+             </Message>
+             <Message Id="NETSPEED" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>NETSPEED</Item>
+               <Item>'DatabaseInfo.NETSPEED_EDITION'</Item>
+               <Item>Netspeed</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
                <Item>'DatabaseInfo.NETSPEED_EDITION'</Item>
               </Issue>
              </Message>
@@ -179,8 +271,22 @@
            </Member>
            <Member Name="#ORG_EDITION">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.ORG_EDITION'</Item>
+               <Item>Edition</Item>
+              </Issue>
+             </Message>
+             <Message Id="ORG" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>ORG</Item>
+               <Item>'DatabaseInfo.ORG_EDITION'</Item>
+               <Item>Org</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
                <Item>'DatabaseInfo.ORG_EDITION'</Item>
               </Issue>
              </Message>
@@ -188,8 +294,22 @@
            </Member>
            <Member Name="#PROXY_EDITION">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.PROXY_EDITION'</Item>
+               <Item>Edition</Item>
+              </Issue>
+             </Message>
+             <Message Id="PROXY" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>PROXY</Item>
+               <Item>'DatabaseInfo.PROXY_EDITION'</Item>
+               <Item>Proxy</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
                <Item>'DatabaseInfo.PROXY_EDITION'</Item>
               </Issue>
              </Message>
@@ -197,8 +317,29 @@
            </Member>
            <Member Name="#REGION_EDITION_REV0">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.REGION_EDITION_REV0'</Item>
+               <Item>Edition</Item>
+              </Issue>
+             </Message>
+             <Message Id="REGION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>REGION</Item>
+               <Item>'DatabaseInfo.REGION_EDITION_REV0'</Item>
+               <Item>Region</Item>
+              </Issue>
+             </Message>
+             <Message Id="REV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>REV</Item>
+               <Item>'DatabaseInfo.REGION_EDITION_REV0'</Item>
+               <Item>Rev</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
                <Item>'DatabaseInfo.REGION_EDITION_REV0'</Item>
               </Issue>
              </Message>
@@ -206,123 +347,30 @@
            </Member>
            <Member Name="#REGION_EDITION_REV1">
             <Messages>
-             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'DatabaseInfo.REGION_EDITION_REV1'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#toString()">
-            <Messages>
-             <Message Id="to" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 08:59:54Z">
+             <Message Id="EDITION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
               <Issue Name="Member">
-               <Item>to</Item>
-               <Item>'DatabaseInfo.toString()'</Item>
-               <Item>To</Item>
+               <Item>EDITION</Item>
+               <Item>'DatabaseInfo.REGION_EDITION_REV1'</Item>
+               <Item>Edition</Item>
               </Issue>
              </Message>
-            </Messages>
-           </Member>
-          </Members>
-         </Type>
-         <Type Name="Location">
-          <Members>
-           <Member Name="#area_code">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.area_code'</Item>
+             <Message Id="REGION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>REGION</Item>
+               <Item>'DatabaseInfo.REGION_EDITION_REV1'</Item>
+               <Item>Region</Item>
               </Issue>
              </Message>
-            </Messages>
-           </Member>
-           <Member Name="#city">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.city'</Item>
+             <Message Id="REV" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>REV</Item>
+               <Item>'DatabaseInfo.REGION_EDITION_REV1'</Item>
+               <Item>Rev</Item>
               </Issue>
              </Message>
-            </Messages>
-           </Member>
-           <Member Name="#countryCode">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.countryCode'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#countryName">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.countryName'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#dma_code">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.dma_code'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#latitude">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.latitude'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#longitude">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.longitude'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#metro_code">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.metro_code'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#postalCode">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.postalCode'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#region">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.region'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
-           <Member Name="#regionName">
-            <Messages>
-             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Created="2010-03-11 08:59:54Z">
-              <Issue>
-               <Item>'Location.regionName'</Item>
+             <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Created="2010-03-11 09:45:22Z">
+              <Issue Name="Member">
+               <Item>'DatabaseInfo.REGION_EDITION_REV1'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -331,10 +379,9 @@
          </Type>
          <Type Name="LookupService">
           <Messages>
-           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2010-03-11 08:59:54Z" FixCategory="DependsOnFix">
-            <Issue Name="DependsOnFix">
+           <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Created="2010-03-11 09:42:13Z">
+            <Issue Name="ProvideDisposeBool">
              <Item>'LookupService'</Item>
-             <Item>'FileStream'</Item>
             </Issue>
            </Message>
           </Messages>
@@ -393,6 +440,15 @@
               <Issue>
                <Item>'LookupService.Close()'</Item>
                <Item>'object'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Dispose()">
+            <Messages>
+             <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Created="2010-03-11 09:42:13Z">
+              <Issue Name="DisposeImplementation">
+               <Item>'LookupService.Dispose()'</Item>
               </Issue>
              </Message>
             </Messages>
@@ -676,18 +732,14 @@
           </Members>
          </Type>
          <Type Name="RegionName">
+          <Messages>
+           <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Created="2010-03-11 09:12:59Z">
+            <Issue>
+             <Item>'RegionName'</Item>
+            </Issue>
+           </Message>
+          </Messages>
           <Members>
-           <Member Name="#GetRegionName(System.String,System.String)">
-            <Messages>
-             <Message Id="ccode" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-03-11 08:59:54Z">
-              <Issue Name="MemberParameter">
-               <Item>'RegionName.GetRegionName(string, string)'</Item>
-               <Item>ccode</Item>
-               <Item>'ccode'</Item>
-              </Issue>
-             </Message>
-            </Messages>
-           </Member>
            <Member Name="#InitRegionNames()">
             <Messages>
              <Message TypeName="AvoidExcessiveLocals" Category="Microsoft.Performance" CheckId="CA1809" Created="2010-03-11 08:59:54Z">
@@ -723,9 +775,6 @@
    <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
     <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
    </Rule>
-   <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
-    <Resolution Name="Default">Because field {0} is visible outside of its declaring type, change its accessibility to private and add a property, with the same accessibility as the field has currently, to provide access to it.</Resolution>
-   </Rule>
    <Rule TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805">
     <Resolution Name="Default">{0} initializes field {1} of type {2} to {3}. Remove this initialization because it will be done automatically by the runtime.</Resolution>
    </Rule>
@@ -739,6 +788,13 @@
    <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
     <Resolution Name="MemberParameter">In method {0}, correct the spelling of '{1}' in parameter name {2} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
    </Rule>
+   <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+    <Resolution Name="Member">Remove the underscores from member name {0}.</Resolution>
+   </Rule>
+   <Rule TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063">
+    <Resolution Name="DisposeImplementation">Modify {0} so that it calls Dispose(true), then calls GC.SuppressFinalize on the current object instance ('this' or 'Me' in Visual Basic), and then returns.</Resolution>
+    <Resolution Name="ProvideDisposeBool">Provide an overridable implementation of Dispose(bool) on {0} or mark the type as sealed. A call to Dispose(false) should only clean up native resources. A call to Dispose(true) should clean up both managed and native resources.</Resolution>
+   </Rule>
    <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
     <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
    </Rule>
@@ -751,11 +807,11 @@
    <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
     <Resolution Name="Default">{0} makes a call to {1} that does not explicitly provide a StringComparison. This should be replaced with a call to {2}.</Resolution>
    </Rule>
+   <Rule TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053">
+    <Resolution Name="Default">Remove the public constructors from {0}.</Resolution>
+   </Rule>
    <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
     <Resolution Name="IsNullOrEmpty">Replace the call to {0} in {1} with a call to 'String.IsNullOrEmpty'.</Resolution>
-   </Rule>
-   <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
-    <Resolution Name="DependsOnFix">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}. If {0} has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Resolution>
    </Rule>
    <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
     <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>

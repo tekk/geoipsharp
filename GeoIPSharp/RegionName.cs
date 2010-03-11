@@ -28,7 +28,7 @@ namespace MaxMind.GeoIP
     /// </summary>
     public sealed class RegionName
     {
-        private static Dictionary<string, Dictionary<string, string>> GEOIP_REGION_NAME;
+        private static Dictionary<string, Dictionary<string, string>> geoIPRegionName;
 
         /// <summary>
         /// Gets the Region name for a given country and Region code
@@ -38,7 +38,7 @@ namespace MaxMind.GeoIP
         /// <returns>The Region name or null</returns>
         public static string GetRegionName(string countryCode, string regionCode)
         {
-            if (GEOIP_REGION_NAME == null)
+            if (geoIPRegionName == null)
             {
                 InitRegionNames();
             }
@@ -48,12 +48,12 @@ namespace MaxMind.GeoIP
                 return null;
             }
 
-            if (!GEOIP_REGION_NAME.ContainsKey(countryCode))
+            if (!geoIPRegionName.ContainsKey(countryCode))
             {
                 return null;
             }
 
-            return GEOIP_REGION_NAME[countryCode][regionCode];
+            return geoIPRegionName[countryCode][regionCode];
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace MaxMind.GeoIP
         private static void InitRegionNames()
         {
 
-            GEOIP_REGION_NAME = new Dictionary<string, Dictionary<string, string>>();
+            geoIPRegionName = new Dictionary<string, Dictionary<string, string>>();
             Dictionary<string, string> cc_reg_AD = new Dictionary<string, string>();
             cc_reg_AD.Add("02", "Canillo");
             cc_reg_AD.Add("03", "Encamp");
@@ -71,7 +71,7 @@ namespace MaxMind.GeoIP
             cc_reg_AD.Add("06", "Sant Julia de Loria");
             cc_reg_AD.Add("07", "Andorra la Vella");
             cc_reg_AD.Add("08", "Escaldes-Engordany");
-            GEOIP_REGION_NAME.Add("AD", cc_reg_AD);
+            geoIPRegionName.Add("AD", cc_reg_AD);
             Dictionary<string, string> cc_reg_AE = new Dictionary<string, string>();
             cc_reg_AE.Add("01", "Abu Dhabi");
             cc_reg_AE.Add("02", "Ajman");
@@ -80,7 +80,7 @@ namespace MaxMind.GeoIP
             cc_reg_AE.Add("05", "Ras Al Khaimah");
             cc_reg_AE.Add("06", "Sharjah");
             cc_reg_AE.Add("07", "Umm Al Quwain");
-            GEOIP_REGION_NAME.Add("AE", cc_reg_AE);
+            geoIPRegionName.Add("AE", cc_reg_AE);
             Dictionary<string, string> cc_reg_AF = new Dictionary<string, string>();
             cc_reg_AF.Add("01", "Badakhshan");
             cc_reg_AF.Add("02", "Badghis");
@@ -120,7 +120,7 @@ namespace MaxMind.GeoIP
             cc_reg_AF.Add("40", "Parvan");
             cc_reg_AF.Add("41", "Daykondi");
             cc_reg_AF.Add("42", "Panjshir");
-            GEOIP_REGION_NAME.Add("AF", cc_reg_AF);
+            geoIPRegionName.Add("AF", cc_reg_AF);
             Dictionary<string, string> cc_reg_AG = new Dictionary<string, string>();
             cc_reg_AG.Add("01", "Barbuda");
             cc_reg_AG.Add("03", "Saint George");
@@ -129,7 +129,7 @@ namespace MaxMind.GeoIP
             cc_reg_AG.Add("06", "Saint Paul");
             cc_reg_AG.Add("07", "Saint Peter");
             cc_reg_AG.Add("08", "Saint Philip");
-            GEOIP_REGION_NAME.Add("AG", cc_reg_AG);
+            geoIPRegionName.Add("AG", cc_reg_AG);
             Dictionary<string, string> cc_reg_AL = new Dictionary<string, string>();
             cc_reg_AL.Add("40", "Berat");
             cc_reg_AL.Add("41", "Diber");
@@ -143,7 +143,7 @@ namespace MaxMind.GeoIP
             cc_reg_AL.Add("49", "Shkoder");
             cc_reg_AL.Add("50", "Tirane");
             cc_reg_AL.Add("51", "Vlore");
-            GEOIP_REGION_NAME.Add("AL", cc_reg_AL);
+            geoIPRegionName.Add("AL", cc_reg_AL);
             Dictionary<string, string> cc_reg_AM = new Dictionary<string, string>();
             cc_reg_AM.Add("01", "Aragatsotn");
             cc_reg_AM.Add("02", "Ararat");
@@ -156,7 +156,7 @@ namespace MaxMind.GeoIP
             cc_reg_AM.Add("09", "Tavush");
             cc_reg_AM.Add("10", "Vayots' Dzor");
             cc_reg_AM.Add("11", "Yerevan");
-            GEOIP_REGION_NAME.Add("AM", cc_reg_AM);
+            geoIPRegionName.Add("AM", cc_reg_AM);
             Dictionary<string, string> cc_reg_AO = new Dictionary<string, string>();
             cc_reg_AO.Add("01", "Benguela");
             cc_reg_AO.Add("02", "Bie");
@@ -177,7 +177,7 @@ namespace MaxMind.GeoIP
             cc_reg_AO.Add("18", "Lunda Sul");
             cc_reg_AO.Add("19", "Bengo");
             cc_reg_AO.Add("20", "Luanda");
-            GEOIP_REGION_NAME.Add("AO", cc_reg_AO);
+            geoIPRegionName.Add("AO", cc_reg_AO);
             Dictionary<string, string> cc_reg_AR = new Dictionary<string, string>();
             cc_reg_AR.Add("01", "Buenos Aires");
             cc_reg_AR.Add("02", "Catamarca");
@@ -203,7 +203,7 @@ namespace MaxMind.GeoIP
             cc_reg_AR.Add("22", "Santiago del Estero");
             cc_reg_AR.Add("23", "Tierra del Fuego");
             cc_reg_AR.Add("24", "Tucuman");
-            GEOIP_REGION_NAME.Add("AR", cc_reg_AR);
+            geoIPRegionName.Add("AR", cc_reg_AR);
             Dictionary<string, string> cc_reg_AT = new Dictionary<string, string>();
             cc_reg_AT.Add("01", "Burgenland");
             cc_reg_AT.Add("02", "Karnten");
@@ -214,7 +214,7 @@ namespace MaxMind.GeoIP
             cc_reg_AT.Add("07", "Tirol");
             cc_reg_AT.Add("08", "Vorarlberg");
             cc_reg_AT.Add("09", "Wien");
-            GEOIP_REGION_NAME.Add("AT", cc_reg_AT);
+            geoIPRegionName.Add("AT", cc_reg_AT);
             Dictionary<string, string> cc_reg_AU = new Dictionary<string, string>();
             cc_reg_AU.Add("01", "Australian Capital Territory");
             cc_reg_AU.Add("02", "New South Wales");
@@ -224,7 +224,7 @@ namespace MaxMind.GeoIP
             cc_reg_AU.Add("06", "Tasmania");
             cc_reg_AU.Add("07", "Victoria");
             cc_reg_AU.Add("08", "Western Australia");
-            GEOIP_REGION_NAME.Add("AU", cc_reg_AU);
+            geoIPRegionName.Add("AU", cc_reg_AU);
             Dictionary<string, string> cc_reg_AZ = new Dictionary<string, string>();
             cc_reg_AZ.Add("01", "Abseron");
             cc_reg_AZ.Add("02", "Agcabadi");
@@ -297,11 +297,11 @@ namespace MaxMind.GeoIP
             cc_reg_AZ.Add("69", "Zangilan");
             cc_reg_AZ.Add("70", "Zaqatala");
             cc_reg_AZ.Add("71", "Zardab");
-            GEOIP_REGION_NAME.Add("AZ", cc_reg_AZ);
+            geoIPRegionName.Add("AZ", cc_reg_AZ);
             Dictionary<string, string> cc_reg_BA = new Dictionary<string, string>();
             cc_reg_BA.Add("01", "Federation of Bosnia and Herzegovina");
             cc_reg_BA.Add("02", "Republika Srpska");
-            GEOIP_REGION_NAME.Add("BA", cc_reg_BA);
+            geoIPRegionName.Add("BA", cc_reg_BA);
             Dictionary<string, string> cc_reg_BB = new Dictionary<string, string>();
             cc_reg_BB.Add("01", "Christ Church");
             cc_reg_BB.Add("02", "Saint Andrew");
@@ -314,7 +314,7 @@ namespace MaxMind.GeoIP
             cc_reg_BB.Add("09", "Saint Peter");
             cc_reg_BB.Add("10", "Saint Philip");
             cc_reg_BB.Add("11", "Saint Thomas");
-            GEOIP_REGION_NAME.Add("BB", cc_reg_BB);
+            geoIPRegionName.Add("BB", cc_reg_BB);
             Dictionary<string, string> cc_reg_BD = new Dictionary<string, string>();
             cc_reg_BD.Add("01", "Barisal");
             cc_reg_BD.Add("04", "Bandarban");
@@ -386,7 +386,7 @@ namespace MaxMind.GeoIP
             cc_reg_BD.Add("84", "Chittagong");
             cc_reg_BD.Add("85", "Barisal");
             cc_reg_BD.Add("86", "Sylhet");
-            GEOIP_REGION_NAME.Add("BD", cc_reg_BD);
+            geoIPRegionName.Add("BD", cc_reg_BD);
             Dictionary<string, string> cc_reg_BE = new Dictionary<string, string>();
             cc_reg_BE.Add("01", "Antwerpen");
             cc_reg_BE.Add("02", "Brabant");
@@ -400,7 +400,7 @@ namespace MaxMind.GeoIP
             cc_reg_BE.Add("10", "Brabant Wallon");
             cc_reg_BE.Add("11", "Brussels Hoofdstedelijk Gewest");
             cc_reg_BE.Add("12", "Vlaams-Brabant");
-            GEOIP_REGION_NAME.Add("BE", cc_reg_BE);
+            geoIPRegionName.Add("BE", cc_reg_BE);
             Dictionary<string, string> cc_reg_BF = new Dictionary<string, string>();
             cc_reg_BF.Add("15", "Bam");
             cc_reg_BF.Add("19", "Boulkiemde");
@@ -447,7 +447,7 @@ namespace MaxMind.GeoIP
             cc_reg_BF.Add("76", "Yatenga");
             cc_reg_BF.Add("77", "Ziro");
             cc_reg_BF.Add("78", "Zondoma");
-            GEOIP_REGION_NAME.Add("BF", cc_reg_BF);
+            geoIPRegionName.Add("BF", cc_reg_BF);
             Dictionary<string, string> cc_reg_BG = new Dictionary<string, string>();
             cc_reg_BG.Add("33", "Mikhaylovgrad");
             cc_reg_BG.Add("38", "Blagoevgrad");
@@ -478,7 +478,7 @@ namespace MaxMind.GeoIP
             cc_reg_BG.Add("63", "Vidin");
             cc_reg_BG.Add("64", "Vratsa");
             cc_reg_BG.Add("65", "Yambol");
-            GEOIP_REGION_NAME.Add("BG", cc_reg_BG);
+            geoIPRegionName.Add("BG", cc_reg_BG);
             Dictionary<string, string> cc_reg_BH = new Dictionary<string, string>();
             cc_reg_BH.Add("01", "Al Hadd");
             cc_reg_BH.Add("02", "Al Manamah");
@@ -498,7 +498,7 @@ namespace MaxMind.GeoIP
             cc_reg_BH.Add("17", "Al Janubiyah");
             cc_reg_BH.Add("18", "Ash Shamaliyah");
             cc_reg_BH.Add("19", "Al Wusta");
-            GEOIP_REGION_NAME.Add("BH", cc_reg_BH);
+            geoIPRegionName.Add("BH", cc_reg_BH);
             Dictionary<string, string> cc_reg_BI = new Dictionary<string, string>();
             cc_reg_BI.Add("02", "Bujumbura");
             cc_reg_BI.Add("09", "Bubanza");
@@ -516,7 +516,7 @@ namespace MaxMind.GeoIP
             cc_reg_BI.Add("21", "Ruyigi");
             cc_reg_BI.Add("22", "Muramvya");
             cc_reg_BI.Add("23", "Mwaro");
-            GEOIP_REGION_NAME.Add("BI", cc_reg_BI);
+            geoIPRegionName.Add("BI", cc_reg_BI);
             Dictionary<string, string> cc_reg_BJ = new Dictionary<string, string>();
             cc_reg_BJ.Add("01", "Atakora");
             cc_reg_BJ.Add("02", "Atlantique");
@@ -536,7 +536,7 @@ namespace MaxMind.GeoIP
             cc_reg_BJ.Add("16", "Oueme");
             cc_reg_BJ.Add("17", "Plateau");
             cc_reg_BJ.Add("18", "Zou");
-            GEOIP_REGION_NAME.Add("BJ", cc_reg_BJ);
+            geoIPRegionName.Add("BJ", cc_reg_BJ);
             Dictionary<string, string> cc_reg_BM = new Dictionary<string, string>();
             cc_reg_BM.Add("01", "Devonshire");
             cc_reg_BM.Add("02", "Hamilton");
@@ -549,7 +549,7 @@ namespace MaxMind.GeoIP
             cc_reg_BM.Add("09", "Smiths");
             cc_reg_BM.Add("10", "Southampton");
             cc_reg_BM.Add("11", "Warwick");
-            GEOIP_REGION_NAME.Add("BM", cc_reg_BM);
+            geoIPRegionName.Add("BM", cc_reg_BM);
             Dictionary<string, string> cc_reg_BN = new Dictionary<string, string>();
             cc_reg_BN.Add("07", "Alibori");
             cc_reg_BN.Add("08", "Belait");
@@ -563,7 +563,7 @@ namespace MaxMind.GeoIP
             cc_reg_BN.Add("16", "Oueme");
             cc_reg_BN.Add("17", "Plateau");
             cc_reg_BN.Add("18", "Zou");
-            GEOIP_REGION_NAME.Add("BN", cc_reg_BN);
+            geoIPRegionName.Add("BN", cc_reg_BN);
             Dictionary<string, string> cc_reg_BO = new Dictionary<string, string>();
             cc_reg_BO.Add("01", "Chuquisaca");
             cc_reg_BO.Add("02", "Cochabamba");
@@ -574,7 +574,7 @@ namespace MaxMind.GeoIP
             cc_reg_BO.Add("07", "Potosi");
             cc_reg_BO.Add("08", "Santa Cruz");
             cc_reg_BO.Add("09", "Tarija");
-            GEOIP_REGION_NAME.Add("BO", cc_reg_BO);
+            geoIPRegionName.Add("BO", cc_reg_BO);
             Dictionary<string, string> cc_reg_BR = new Dictionary<string, string>();
             cc_reg_BR.Add("01", "Acre");
             cc_reg_BR.Add("02", "Alagoas");
@@ -603,7 +603,7 @@ namespace MaxMind.GeoIP
             cc_reg_BR.Add("29", "Goias");
             cc_reg_BR.Add("30", "Pernambuco");
             cc_reg_BR.Add("31", "Tocantins");
-            GEOIP_REGION_NAME.Add("BR", cc_reg_BR);
+            geoIPRegionName.Add("BR", cc_reg_BR);
             Dictionary<string, string> cc_reg_BS = new Dictionary<string, string>();
             cc_reg_BS.Add("05", "Bimini");
             cc_reg_BS.Add("06", "Cat Island");
@@ -626,7 +626,7 @@ namespace MaxMind.GeoIP
             cc_reg_BS.Add("33", "Rock Sound");
             cc_reg_BS.Add("34", "Sandy Point");
             cc_reg_BS.Add("35", "San Salvador and Rum Cay");
-            GEOIP_REGION_NAME.Add("BS", cc_reg_BS);
+            geoIPRegionName.Add("BS", cc_reg_BS);
             Dictionary<string, string> cc_reg_BT = new Dictionary<string, string>();
             cc_reg_BT.Add("05", "Bumthang");
             cc_reg_BT.Add("06", "Chhukha");
@@ -646,7 +646,7 @@ namespace MaxMind.GeoIP
             cc_reg_BT.Add("20", "Thimphu");
             cc_reg_BT.Add("21", "Tongsa");
             cc_reg_BT.Add("22", "Wangdi Phodrang");
-            GEOIP_REGION_NAME.Add("BT", cc_reg_BT);
+            geoIPRegionName.Add("BT", cc_reg_BT);
             Dictionary<string, string> cc_reg_BW = new Dictionary<string, string>();
             cc_reg_BW.Add("01", "Central");
             cc_reg_BW.Add("03", "Ghanzi");
@@ -657,7 +657,7 @@ namespace MaxMind.GeoIP
             cc_reg_BW.Add("09", "South-East");
             cc_reg_BW.Add("10", "Southern");
             cc_reg_BW.Add("11", "North-West");
-            GEOIP_REGION_NAME.Add("BW", cc_reg_BW);
+            geoIPRegionName.Add("BW", cc_reg_BW);
             Dictionary<string, string> cc_reg_BY = new Dictionary<string, string>();
             cc_reg_BY.Add("01", "Brestskaya Voblasts'");
             cc_reg_BY.Add("02", "Homyel'skaya Voblasts'");
@@ -666,7 +666,7 @@ namespace MaxMind.GeoIP
             cc_reg_BY.Add("05", "Minskaya Voblasts'");
             cc_reg_BY.Add("06", "Mahilyowskaya Voblasts'");
             cc_reg_BY.Add("07", "Vitsyebskaya Voblasts'");
-            GEOIP_REGION_NAME.Add("BY", cc_reg_BY);
+            geoIPRegionName.Add("BY", cc_reg_BY);
             Dictionary<string, string> cc_reg_BZ = new Dictionary<string, string>();
             cc_reg_BZ.Add("01", "Belize");
             cc_reg_BZ.Add("02", "Cayo");
@@ -674,7 +674,7 @@ namespace MaxMind.GeoIP
             cc_reg_BZ.Add("04", "Orange Walk");
             cc_reg_BZ.Add("05", "Stann Creek");
             cc_reg_BZ.Add("06", "Toledo");
-            GEOIP_REGION_NAME.Add("BZ", cc_reg_BZ);
+            geoIPRegionName.Add("BZ", cc_reg_BZ);
             Dictionary<string, string> cc_reg_CA = new Dictionary<string, string>();
             cc_reg_CA.Add("AB", "Alberta");
             cc_reg_CA.Add("BC", "British Columbia");
@@ -689,7 +689,7 @@ namespace MaxMind.GeoIP
             cc_reg_CA.Add("QC", "Quebec");
             cc_reg_CA.Add("SK", "Saskatchewan");
             cc_reg_CA.Add("YT", "Yukon Territory");
-            GEOIP_REGION_NAME.Add("CA", cc_reg_CA);
+            geoIPRegionName.Add("CA", cc_reg_CA);
             Dictionary<string, string> cc_reg_CD = new Dictionary<string, string>();
             cc_reg_CD.Add("01", "Bandundu");
             cc_reg_CD.Add("02", "Equateur");
@@ -703,7 +703,7 @@ namespace MaxMind.GeoIP
             cc_reg_CD.Add("11", "Nord-Kivu");
             cc_reg_CD.Add("12", "Sud-Kivu");
             cc_reg_CD.Add("13", "Cuvette");
-            GEOIP_REGION_NAME.Add("CD", cc_reg_CD);
+            geoIPRegionName.Add("CD", cc_reg_CD);
             Dictionary<string, string> cc_reg_CF = new Dictionary<string, string>();
             cc_reg_CF.Add("01", "Bamingui-Bangoran");
             cc_reg_CF.Add("02", "Basse-Kotto");
@@ -722,7 +722,7 @@ namespace MaxMind.GeoIP
             cc_reg_CF.Add("16", "Sangha-Mbaere");
             cc_reg_CF.Add("17", "Ombella-Mpoko");
             cc_reg_CF.Add("18", "Bangui");
-            GEOIP_REGION_NAME.Add("CF", cc_reg_CF);
+            geoIPRegionName.Add("CF", cc_reg_CF);
             Dictionary<string, string> cc_reg_CG = new Dictionary<string, string>();
             cc_reg_CG.Add("01", "Bouenza");
             cc_reg_CG.Add("03", "Cuvette");
@@ -734,7 +734,7 @@ namespace MaxMind.GeoIP
             cc_reg_CG.Add("10", "Sangha");
             cc_reg_CG.Add("11", "Pool");
             cc_reg_CG.Add("12", "Brazzaville");
-            GEOIP_REGION_NAME.Add("CG", cc_reg_CG);
+            geoIPRegionName.Add("CG", cc_reg_CG);
             Dictionary<string, string> cc_reg_CH = new Dictionary<string, string>();
             cc_reg_CH.Add("01", "Aargau");
             cc_reg_CH.Add("02", "Ausser-Rhoden");
@@ -762,7 +762,7 @@ namespace MaxMind.GeoIP
             cc_reg_CH.Add("24", "Zug");
             cc_reg_CH.Add("25", "Zurich");
             cc_reg_CH.Add("26", "Jura");
-            GEOIP_REGION_NAME.Add("CH", cc_reg_CH);
+            geoIPRegionName.Add("CH", cc_reg_CH);
             Dictionary<string, string> cc_reg_CI = new Dictionary<string, string>();
             cc_reg_CI.Add("05", "Atacama");
             cc_reg_CI.Add("06", "Biobio");
@@ -787,7 +787,7 @@ namespace MaxMind.GeoIP
             cc_reg_CI.Add("90", "Vallee du Bandama");
             cc_reg_CI.Add("91", "Worodougou");
             cc_reg_CI.Add("92", "Zanzan");
-            GEOIP_REGION_NAME.Add("CI", cc_reg_CI);
+            geoIPRegionName.Add("CI", cc_reg_CI);
             Dictionary<string, string> cc_reg_CL = new Dictionary<string, string>();
             cc_reg_CL.Add("01", "Valparaiso");
             cc_reg_CL.Add("02", "Aisen del General Carlos Ibanez del Campo");
@@ -802,7 +802,7 @@ namespace MaxMind.GeoIP
             cc_reg_CL.Add("11", "Maule");
             cc_reg_CL.Add("12", "Name Metropolitana");
             cc_reg_CL.Add("13", "Tarapaca");
-            GEOIP_REGION_NAME.Add("CL", cc_reg_CL);
+            geoIPRegionName.Add("CL", cc_reg_CL);
             Dictionary<string, string> cc_reg_CM = new Dictionary<string, string>();
             cc_reg_CM.Add("04", "Est");
             cc_reg_CM.Add("05", "Littoral");
@@ -814,7 +814,7 @@ namespace MaxMind.GeoIP
             cc_reg_CM.Add("12", "Extreme-Nord");
             cc_reg_CM.Add("13", "Nord");
             cc_reg_CM.Add("14", "Sud");
-            GEOIP_REGION_NAME.Add("CM", cc_reg_CM);
+            geoIPRegionName.Add("CM", cc_reg_CM);
             Dictionary<string, string> cc_reg_CN = new Dictionary<string, string>();
             cc_reg_CN.Add("01", "Anhui");
             cc_reg_CN.Add("02", "Zhejiang");
@@ -847,7 +847,7 @@ namespace MaxMind.GeoIP
             cc_reg_CN.Add("31", "Hainan");
             cc_reg_CN.Add("32", "Sichuan");
             cc_reg_CN.Add("33", "Chongqing");
-            GEOIP_REGION_NAME.Add("CN", cc_reg_CN);
+            geoIPRegionName.Add("CN", cc_reg_CN);
             Dictionary<string, string> cc_reg_CO = new Dictionary<string, string>();
             cc_reg_CO.Add("01", "Amazonas");
             cc_reg_CO.Add("02", "Antioquia");
@@ -886,7 +886,7 @@ namespace MaxMind.GeoIP
             cc_reg_CO.Add("36", "Boyaca");
             cc_reg_CO.Add("37", "Caldas");
             cc_reg_CO.Add("38", "Magdalena");
-            GEOIP_REGION_NAME.Add("CO", cc_reg_CO);
+            geoIPRegionName.Add("CO", cc_reg_CO);
             Dictionary<string, string> cc_reg_CR = new Dictionary<string, string>();
             cc_reg_CR.Add("01", "Alajuela");
             cc_reg_CR.Add("02", "Cartago");
@@ -895,7 +895,7 @@ namespace MaxMind.GeoIP
             cc_reg_CR.Add("06", "Limon");
             cc_reg_CR.Add("07", "Puntarenas");
             cc_reg_CR.Add("08", "San Jose");
-            GEOIP_REGION_NAME.Add("CR", cc_reg_CR);
+            geoIPRegionName.Add("CR", cc_reg_CR);
             Dictionary<string, string> cc_reg_CU = new Dictionary<string, string>();
             cc_reg_CU.Add("01", "Pinar del Rio");
             cc_reg_CU.Add("02", "Ciudad de la Habana");
@@ -912,7 +912,7 @@ namespace MaxMind.GeoIP
             cc_reg_CU.Add("14", "Sancti Spiritus");
             cc_reg_CU.Add("15", "Santiago de Cuba");
             cc_reg_CU.Add("16", "Villa Clara");
-            GEOIP_REGION_NAME.Add("CU", cc_reg_CU);
+            geoIPRegionName.Add("CU", cc_reg_CU);
             Dictionary<string, string> cc_reg_CV = new Dictionary<string, string>();
             cc_reg_CV.Add("01", "Boa Vista");
             cc_reg_CV.Add("02", "Brava");
@@ -930,7 +930,7 @@ namespace MaxMind.GeoIP
             cc_reg_CV.Add("18", "Sao Filipe");
             cc_reg_CV.Add("19", "Sao Miguel");
             cc_reg_CV.Add("20", "Tarrafal");
-            GEOIP_REGION_NAME.Add("CV", cc_reg_CV);
+            geoIPRegionName.Add("CV", cc_reg_CV);
             Dictionary<string, string> cc_reg_CY = new Dictionary<string, string>();
             cc_reg_CY.Add("01", "Famagusta");
             cc_reg_CY.Add("02", "Kyrenia");
@@ -938,7 +938,7 @@ namespace MaxMind.GeoIP
             cc_reg_CY.Add("04", "Nicosia");
             cc_reg_CY.Add("05", "Limassol");
             cc_reg_CY.Add("06", "Paphos");
-            GEOIP_REGION_NAME.Add("CY", cc_reg_CY);
+            geoIPRegionName.Add("CY", cc_reg_CY);
             Dictionary<string, string> cc_reg_CZ = new Dictionary<string, string>();
             cc_reg_CZ.Add("03", "Blansko");
             cc_reg_CZ.Add("04", "Breclav");
@@ -969,7 +969,7 @@ namespace MaxMind.GeoIP
             cc_reg_CZ.Add("88", "Stredocesky kraj");
             cc_reg_CZ.Add("89", "Ustecky kraj");
             cc_reg_CZ.Add("90", "Zlinsky kraj");
-            GEOIP_REGION_NAME.Add("CZ", cc_reg_CZ);
+            geoIPRegionName.Add("CZ", cc_reg_CZ);
             Dictionary<string, string> cc_reg_DE = new Dictionary<string, string>();
             cc_reg_DE.Add("01", "Baden-Wurttemberg");
             cc_reg_DE.Add("02", "Bayern");
@@ -987,7 +987,7 @@ namespace MaxMind.GeoIP
             cc_reg_DE.Add("14", "Sachsen-Anhalt");
             cc_reg_DE.Add("15", "Thuringen");
             cc_reg_DE.Add("16", "Berlin");
-            GEOIP_REGION_NAME.Add("DE", cc_reg_DE);
+            geoIPRegionName.Add("DE", cc_reg_DE);
             Dictionary<string, string> cc_reg_DJ = new Dictionary<string, string>();
             cc_reg_DJ.Add("01", "Ali Sabieh");
             cc_reg_DJ.Add("04", "Obock");
@@ -995,7 +995,7 @@ namespace MaxMind.GeoIP
             cc_reg_DJ.Add("06", "Dikhil");
             cc_reg_DJ.Add("07", "Djibouti");
             cc_reg_DJ.Add("08", "Arta");
-            GEOIP_REGION_NAME.Add("DJ", cc_reg_DJ);
+            geoIPRegionName.Add("DJ", cc_reg_DJ);
             Dictionary<string, string> cc_reg_DK = new Dictionary<string, string>();
             cc_reg_DK.Add("01", "Arhus");
             cc_reg_DK.Add("02", "Bornholm");
@@ -1017,7 +1017,7 @@ namespace MaxMind.GeoIP
             cc_reg_DK.Add("19", "Nordjylland");
             cc_reg_DK.Add("20", "Sjelland");
             cc_reg_DK.Add("21", "Syddanmark");
-            GEOIP_REGION_NAME.Add("DK", cc_reg_DK);
+            geoIPRegionName.Add("DK", cc_reg_DK);
             Dictionary<string, string> cc_reg_DM = new Dictionary<string, string>();
             cc_reg_DM.Add("02", "Saint Andrew");
             cc_reg_DM.Add("03", "Saint David");
@@ -1029,7 +1029,7 @@ namespace MaxMind.GeoIP
             cc_reg_DM.Add("09", "Saint Patrick");
             cc_reg_DM.Add("10", "Saint Paul");
             cc_reg_DM.Add("11", "Saint Peter");
-            GEOIP_REGION_NAME.Add("DM", cc_reg_DM);
+            geoIPRegionName.Add("DM", cc_reg_DM);
             Dictionary<string, string> cc_reg_DO = new Dictionary<string, string>();
             cc_reg_DO.Add("01", "Azua");
             cc_reg_DO.Add("02", "Baoruco");
@@ -1065,7 +1065,7 @@ namespace MaxMind.GeoIP
             cc_reg_DO.Add("35", "Peravia");
             cc_reg_DO.Add("36", "San Jose de Ocoa");
             cc_reg_DO.Add("37", "Santo Domingo");
-            GEOIP_REGION_NAME.Add("DO", cc_reg_DO);
+            geoIPRegionName.Add("DO", cc_reg_DO);
             Dictionary<string, string> cc_reg_DZ = new Dictionary<string, string>();
             cc_reg_DZ.Add("01", "Alger");
             cc_reg_DZ.Add("03", "Batna");
@@ -1115,7 +1115,7 @@ namespace MaxMind.GeoIP
             cc_reg_DZ.Add("54", "Tindouf");
             cc_reg_DZ.Add("55", "Tipaza");
             cc_reg_DZ.Add("56", "Tissemsilt");
-            GEOIP_REGION_NAME.Add("DZ", cc_reg_DZ);
+            geoIPRegionName.Add("DZ", cc_reg_DZ);
             Dictionary<string, string> cc_reg_EC = new Dictionary<string, string>();
             cc_reg_EC.Add("01", "Galapagos");
             cc_reg_EC.Add("02", "Azuay");
@@ -1139,7 +1139,7 @@ namespace MaxMind.GeoIP
             cc_reg_EC.Add("22", "Sucumbios");
             cc_reg_EC.Add("23", "Napo");
             cc_reg_EC.Add("24", "Orellana");
-            GEOIP_REGION_NAME.Add("EC", cc_reg_EC);
+            geoIPRegionName.Add("EC", cc_reg_EC);
             Dictionary<string, string> cc_reg_EE = new Dictionary<string, string>();
             cc_reg_EE.Add("01", "Harjumaa");
             cc_reg_EE.Add("02", "Hiiumaa");
@@ -1162,7 +1162,7 @@ namespace MaxMind.GeoIP
             cc_reg_EE.Add("19", "Valgamaa");
             cc_reg_EE.Add("20", "Viljandimaa");
             cc_reg_EE.Add("21", "Vorumaa");
-            GEOIP_REGION_NAME.Add("EE", cc_reg_EE);
+            geoIPRegionName.Add("EE", cc_reg_EE);
             Dictionary<string, string> cc_reg_EG = new Dictionary<string, string>();
             cc_reg_EG.Add("01", "Ad Daqahliyah");
             cc_reg_EG.Add("02", "Al Bahr al Ahmar");
@@ -1190,7 +1190,7 @@ namespace MaxMind.GeoIP
             cc_reg_EG.Add("24", "Suhaj");
             cc_reg_EG.Add("26", "Janub Sina'");
             cc_reg_EG.Add("27", "Shamal Sina'");
-            GEOIP_REGION_NAME.Add("EG", cc_reg_EG);
+            geoIPRegionName.Add("EG", cc_reg_EG);
             Dictionary<string, string> cc_reg_ER = new Dictionary<string, string>();
             cc_reg_ER.Add("01", "Anseba");
             cc_reg_ER.Add("02", "Debub");
@@ -1198,7 +1198,7 @@ namespace MaxMind.GeoIP
             cc_reg_ER.Add("04", "Gash Barka");
             cc_reg_ER.Add("05", "Ma'akel");
             cc_reg_ER.Add("06", "Semenawi K'eyih Bahri");
-            GEOIP_REGION_NAME.Add("ER", cc_reg_ER);
+            geoIPRegionName.Add("ER", cc_reg_ER);
             Dictionary<string, string> cc_reg_ES = new Dictionary<string, string>();
             cc_reg_ES.Add("07", "Islas Baleares");
             cc_reg_ES.Add("27", "La Rioja");
@@ -1217,7 +1217,7 @@ namespace MaxMind.GeoIP
             cc_reg_ES.Add("58", "Galicia");
             cc_reg_ES.Add("59", "Pais Vasco");
             cc_reg_ES.Add("60", "Comunidad Valenciana");
-            GEOIP_REGION_NAME.Add("ES", cc_reg_ES);
+            geoIPRegionName.Add("ES", cc_reg_ES);
             Dictionary<string, string> cc_reg_ET = new Dictionary<string, string>();
             cc_reg_ET.Add("02", "Amhara");
             cc_reg_ET.Add("07", "Somali");
@@ -1238,7 +1238,7 @@ namespace MaxMind.GeoIP
             cc_reg_ET.Add("52", "Sumale");
             cc_reg_ET.Add("53", "Tigray");
             cc_reg_ET.Add("54", "YeDebub Biheroch Bihereseboch na Hizboch");
-            GEOIP_REGION_NAME.Add("ET", cc_reg_ET);
+            geoIPRegionName.Add("ET", cc_reg_ET);
             Dictionary<string, string> cc_reg_FI = new Dictionary<string, string>();
             cc_reg_FI.Add("01", "Aland");
             cc_reg_FI.Add("06", "Lapland");
@@ -1246,20 +1246,20 @@ namespace MaxMind.GeoIP
             cc_reg_FI.Add("13", "Southern Finland");
             cc_reg_FI.Add("14", "Eastern Finland");
             cc_reg_FI.Add("15", "Western Finland");
-            GEOIP_REGION_NAME.Add("FI", cc_reg_FI);
+            geoIPRegionName.Add("FI", cc_reg_FI);
             Dictionary<string, string> cc_reg_FJ = new Dictionary<string, string>();
             cc_reg_FJ.Add("01", "Central");
             cc_reg_FJ.Add("02", "Eastern");
             cc_reg_FJ.Add("03", "Northern");
             cc_reg_FJ.Add("04", "Rotuma");
             cc_reg_FJ.Add("05", "Western");
-            GEOIP_REGION_NAME.Add("FJ", cc_reg_FJ);
+            geoIPRegionName.Add("FJ", cc_reg_FJ);
             Dictionary<string, string> cc_reg_FM = new Dictionary<string, string>();
             cc_reg_FM.Add("01", "Kosrae");
             cc_reg_FM.Add("02", "Pohnpei");
             cc_reg_FM.Add("03", "Chuuk");
             cc_reg_FM.Add("04", "Yap");
-            GEOIP_REGION_NAME.Add("FM", cc_reg_FM);
+            geoIPRegionName.Add("FM", cc_reg_FM);
             Dictionary<string, string> cc_reg_FR = new Dictionary<string, string>();
             cc_reg_FR.Add("97", "Aquitaine");
             cc_reg_FR.Add("98", "Auvergne");
@@ -1283,7 +1283,7 @@ namespace MaxMind.GeoIP
             cc_reg_FR.Add("B8", "Provence-Alpes-Cote d'Azur");
             cc_reg_FR.Add("B9", "Rhone-Alpes");
             cc_reg_FR.Add("C1", "Alsace");
-            GEOIP_REGION_NAME.Add("FR", cc_reg_FR);
+            geoIPRegionName.Add("FR", cc_reg_FR);
             Dictionary<string, string> cc_reg_GA = new Dictionary<string, string>();
             cc_reg_GA.Add("01", "Estuaire");
             cc_reg_GA.Add("02", "Haut-Ogooue");
@@ -1294,7 +1294,7 @@ namespace MaxMind.GeoIP
             cc_reg_GA.Add("07", "Ogooue-Lolo");
             cc_reg_GA.Add("08", "Ogooue-Maritime");
             cc_reg_GA.Add("09", "Woleu-Ntem");
-            GEOIP_REGION_NAME.Add("GA", cc_reg_GA);
+            geoIPRegionName.Add("GA", cc_reg_GA);
             Dictionary<string, string> cc_reg_GB = new Dictionary<string, string>();
             cc_reg_GB.Add("01", "Avon");
             cc_reg_GB.Add("03", "Berkshire");
@@ -1548,7 +1548,7 @@ namespace MaxMind.GeoIP
             cc_reg_GB.Add("Z2", "Torfaen");
             cc_reg_GB.Add("Z3", "Vale of Glamorgan, The");
             cc_reg_GB.Add("Z4", "Wrexham");
-            GEOIP_REGION_NAME.Add("GB", cc_reg_GB);
+            geoIPRegionName.Add("GB", cc_reg_GB);
             Dictionary<string, string> cc_reg_GD = new Dictionary<string, string>();
             cc_reg_GD.Add("01", "Saint Andrew");
             cc_reg_GD.Add("02", "Saint David");
@@ -1556,7 +1556,7 @@ namespace MaxMind.GeoIP
             cc_reg_GD.Add("04", "Saint John");
             cc_reg_GD.Add("05", "Saint Mark");
             cc_reg_GD.Add("06", "Saint Patrick");
-            GEOIP_REGION_NAME.Add("GD", cc_reg_GD);
+            geoIPRegionName.Add("GD", cc_reg_GD);
             Dictionary<string, string> cc_reg_GE = new Dictionary<string, string>();
             cc_reg_GE.Add("01", "Abashis Raioni");
             cc_reg_GE.Add("02", "Abkhazia");
@@ -1622,7 +1622,7 @@ namespace MaxMind.GeoIP
             cc_reg_GE.Add("62", "Zestap'onis Raioni");
             cc_reg_GE.Add("63", "Zugdidi");
             cc_reg_GE.Add("64", "Zugdidis Raioni");
-            GEOIP_REGION_NAME.Add("GE", cc_reg_GE);
+            geoIPRegionName.Add("GE", cc_reg_GE);
             Dictionary<string, string> cc_reg_GH = new Dictionary<string, string>();
             cc_reg_GH.Add("01", "Greater Accra");
             cc_reg_GH.Add("02", "Ashanti");
@@ -1634,12 +1634,12 @@ namespace MaxMind.GeoIP
             cc_reg_GH.Add("09", "Western");
             cc_reg_GH.Add("10", "Upper East");
             cc_reg_GH.Add("11", "Upper West");
-            GEOIP_REGION_NAME.Add("GH", cc_reg_GH);
+            geoIPRegionName.Add("GH", cc_reg_GH);
             Dictionary<string, string> cc_reg_GL = new Dictionary<string, string>();
             cc_reg_GL.Add("01", "Nordgronland");
             cc_reg_GL.Add("02", "Ostgronland");
             cc_reg_GL.Add("03", "Vestgronland");
-            GEOIP_REGION_NAME.Add("GL", cc_reg_GL);
+            geoIPRegionName.Add("GL", cc_reg_GL);
             Dictionary<string, string> cc_reg_GM = new Dictionary<string, string>();
             cc_reg_GM.Add("01", "Banjul");
             cc_reg_GM.Add("02", "Lower River");
@@ -1647,7 +1647,7 @@ namespace MaxMind.GeoIP
             cc_reg_GM.Add("04", "Upper River");
             cc_reg_GM.Add("05", "Western");
             cc_reg_GM.Add("07", "North Bank");
-            GEOIP_REGION_NAME.Add("GM", cc_reg_GM);
+            geoIPRegionName.Add("GM", cc_reg_GM);
             Dictionary<string, string> cc_reg_GN = new Dictionary<string, string>();
             cc_reg_GN.Add("01", "Beyla");
             cc_reg_GN.Add("02", "Boffa");
@@ -1683,7 +1683,7 @@ namespace MaxMind.GeoIP
             cc_reg_GN.Add("37", "Mandiana");
             cc_reg_GN.Add("38", "Nzerekore");
             cc_reg_GN.Add("39", "Siguiri");
-            GEOIP_REGION_NAME.Add("GN", cc_reg_GN);
+            geoIPRegionName.Add("GN", cc_reg_GN);
             Dictionary<string, string> cc_reg_GQ = new Dictionary<string, string>();
             cc_reg_GQ.Add("03", "Annobon");
             cc_reg_GQ.Add("04", "Bioko Norte");
@@ -1692,7 +1692,7 @@ namespace MaxMind.GeoIP
             cc_reg_GQ.Add("07", "Kie-Ntem");
             cc_reg_GQ.Add("08", "Litoral");
             cc_reg_GQ.Add("09", "Wele-Nzas");
-            GEOIP_REGION_NAME.Add("GQ", cc_reg_GQ);
+            geoIPRegionName.Add("GQ", cc_reg_GQ);
             Dictionary<string, string> cc_reg_GR = new Dictionary<string, string>();
             cc_reg_GR.Add("01", "Evros");
             cc_reg_GR.Add("02", "Rodhopi");
@@ -1745,7 +1745,7 @@ namespace MaxMind.GeoIP
             cc_reg_GR.Add("49", "Kikladhes");
             cc_reg_GR.Add("50", "Khios");
             cc_reg_GR.Add("51", "Lesvos");
-            GEOIP_REGION_NAME.Add("GR", cc_reg_GR);
+            geoIPRegionName.Add("GR", cc_reg_GR);
             Dictionary<string, string> cc_reg_GT = new Dictionary<string, string>();
             cc_reg_GT.Add("01", "Alta Verapaz");
             cc_reg_GT.Add("02", "Baja Verapaz");
@@ -1769,7 +1769,7 @@ namespace MaxMind.GeoIP
             cc_reg_GT.Add("20", "Suchitepequez");
             cc_reg_GT.Add("21", "Totonicapan");
             cc_reg_GT.Add("22", "Zacapa");
-            GEOIP_REGION_NAME.Add("GT", cc_reg_GT);
+            geoIPRegionName.Add("GT", cc_reg_GT);
             Dictionary<string, string> cc_reg_GW = new Dictionary<string, string>();
             cc_reg_GW.Add("01", "Bafata");
             cc_reg_GW.Add("02", "Quinara");
@@ -1780,7 +1780,7 @@ namespace MaxMind.GeoIP
             cc_reg_GW.Add("10", "Gabu");
             cc_reg_GW.Add("11", "Bissau");
             cc_reg_GW.Add("12", "Biombo");
-            GEOIP_REGION_NAME.Add("GW", cc_reg_GW);
+            geoIPRegionName.Add("GW", cc_reg_GW);
             Dictionary<string, string> cc_reg_GY = new Dictionary<string, string>();
             cc_reg_GY.Add("10", "Barima-Waini");
             cc_reg_GY.Add("11", "Cuyuni-Mazaruni");
@@ -1792,7 +1792,7 @@ namespace MaxMind.GeoIP
             cc_reg_GY.Add("17", "Potaro-Siparuni");
             cc_reg_GY.Add("18", "Upper Demerara-Berbice");
             cc_reg_GY.Add("19", "Upper Takutu-Upper Essequibo");
-            GEOIP_REGION_NAME.Add("GY", cc_reg_GY);
+            geoIPRegionName.Add("GY", cc_reg_GY);
             Dictionary<string, string> cc_reg_HN = new Dictionary<string, string>();
             cc_reg_HN.Add("01", "Atlantida");
             cc_reg_HN.Add("02", "Choluteca");
@@ -1812,7 +1812,7 @@ namespace MaxMind.GeoIP
             cc_reg_HN.Add("16", "Santa Barbara");
             cc_reg_HN.Add("17", "Valle");
             cc_reg_HN.Add("18", "Yoro");
-            GEOIP_REGION_NAME.Add("HN", cc_reg_HN);
+            geoIPRegionName.Add("HN", cc_reg_HN);
             Dictionary<string, string> cc_reg_HR = new Dictionary<string, string>();
             cc_reg_HR.Add("01", "Bjelovarsko-Bilogorska");
             cc_reg_HR.Add("02", "Brodsko-Posavska");
@@ -1835,7 +1835,7 @@ namespace MaxMind.GeoIP
             cc_reg_HR.Add("19", "Zadarska");
             cc_reg_HR.Add("20", "Zagrebacka");
             cc_reg_HR.Add("21", "Grad Zagreb");
-            GEOIP_REGION_NAME.Add("HR", cc_reg_HR);
+            geoIPRegionName.Add("HR", cc_reg_HR);
             Dictionary<string, string> cc_reg_HT = new Dictionary<string, string>();
             cc_reg_HT.Add("03", "Nord-Ouest");
             cc_reg_HT.Add("06", "Artibonite");
@@ -1847,7 +1847,7 @@ namespace MaxMind.GeoIP
             cc_reg_HT.Add("13", "Sud-Est");
             cc_reg_HT.Add("14", "Grand' Anse");
             cc_reg_HT.Add("15", "Nippes");
-            GEOIP_REGION_NAME.Add("HT", cc_reg_HT);
+            geoIPRegionName.Add("HT", cc_reg_HT);
             Dictionary<string, string> cc_reg_HU = new Dictionary<string, string>();
             cc_reg_HU.Add("01", "Bacs-Kiskun");
             cc_reg_HU.Add("02", "Baranya");
@@ -1891,7 +1891,7 @@ namespace MaxMind.GeoIP
             cc_reg_HU.Add("40", "Zalaegerszeg");
             cc_reg_HU.Add("41", "Salgotarjan");
             cc_reg_HU.Add("42", "Szekszard");
-            GEOIP_REGION_NAME.Add("HU", cc_reg_HU);
+            geoIPRegionName.Add("HU", cc_reg_HU);
             Dictionary<string, string> cc_reg_ID = new Dictionary<string, string>();
             cc_reg_ID.Add("01", "Aceh");
             cc_reg_ID.Add("02", "Bali");
@@ -1933,7 +1933,7 @@ namespace MaxMind.GeoIP
             cc_reg_ID.Add("39", "Irian Jaya Barat");
             cc_reg_ID.Add("40", "Kepulauan Riau");
             cc_reg_ID.Add("41", "Sulawesi Barat");
-            GEOIP_REGION_NAME.Add("ID", cc_reg_ID);
+            geoIPRegionName.Add("ID", cc_reg_ID);
             Dictionary<string, string> cc_reg_IE = new Dictionary<string, string>();
             cc_reg_IE.Add("01", "Carlow");
             cc_reg_IE.Add("02", "Cavan");
@@ -1961,7 +1961,7 @@ namespace MaxMind.GeoIP
             cc_reg_IE.Add("29", "Westmeath");
             cc_reg_IE.Add("30", "Wexford");
             cc_reg_IE.Add("31", "Wicklow");
-            GEOIP_REGION_NAME.Add("IE", cc_reg_IE);
+            geoIPRegionName.Add("IE", cc_reg_IE);
             Dictionary<string, string> cc_reg_IL = new Dictionary<string, string>();
             cc_reg_IL.Add("01", "HaDarom");
             cc_reg_IL.Add("02", "HaMerkaz");
@@ -1969,7 +1969,7 @@ namespace MaxMind.GeoIP
             cc_reg_IL.Add("04", "Hefa");
             cc_reg_IL.Add("05", "Tel Aviv");
             cc_reg_IL.Add("06", "Yerushalayim");
-            GEOIP_REGION_NAME.Add("IL", cc_reg_IL);
+            geoIPRegionName.Add("IL", cc_reg_IL);
             Dictionary<string, string> cc_reg_IN = new Dictionary<string, string>();
             cc_reg_IN.Add("01", "Andaman and Nicobar Islands");
             cc_reg_IN.Add("02", "Andhra Pradesh");
@@ -2006,7 +2006,7 @@ namespace MaxMind.GeoIP
             cc_reg_IN.Add("37", "Chhattisgarh");
             cc_reg_IN.Add("38", "Jharkhand");
             cc_reg_IN.Add("39", "Uttarakhand");
-            GEOIP_REGION_NAME.Add("IN", cc_reg_IN);
+            geoIPRegionName.Add("IN", cc_reg_IN);
             Dictionary<string, string> cc_reg_IQ = new Dictionary<string, string>();
             cc_reg_IQ.Add("01", "Al Anbar");
             cc_reg_IQ.Add("02", "Al Basrah");
@@ -2026,7 +2026,7 @@ namespace MaxMind.GeoIP
             cc_reg_IQ.Add("16", "Wasit");
             cc_reg_IQ.Add("17", "An Najaf");
             cc_reg_IQ.Add("18", "Salah ad Din");
-            GEOIP_REGION_NAME.Add("IQ", cc_reg_IQ);
+            geoIPRegionName.Add("IQ", cc_reg_IQ);
             Dictionary<string, string> cc_reg_IR = new Dictionary<string, string>();
             cc_reg_IR.Add("01", "Azarbayjan-e Bakhtari");
             cc_reg_IR.Add("02", "Azarbayjan-e Khavari");
@@ -2068,7 +2068,7 @@ namespace MaxMind.GeoIP
             cc_reg_IR.Add("41", "Khorasan-e Janubi");
             cc_reg_IR.Add("42", "Khorasan-e Razavi");
             cc_reg_IR.Add("43", "Khorasan-e Shemali");
-            GEOIP_REGION_NAME.Add("IR", cc_reg_IR);
+            geoIPRegionName.Add("IR", cc_reg_IR);
             Dictionary<string, string> cc_reg_IS = new Dictionary<string, string>();
             cc_reg_IS.Add("03", "Arnessysla");
             cc_reg_IS.Add("05", "Austur-Hunavatnssysla");
@@ -2096,7 +2096,7 @@ namespace MaxMind.GeoIP
             cc_reg_IS.Add("43", "Suournes");
             cc_reg_IS.Add("44", "Vestfiroir");
             cc_reg_IS.Add("45", "Vesturland");
-            GEOIP_REGION_NAME.Add("IS", cc_reg_IS);
+            geoIPRegionName.Add("IS", cc_reg_IS);
             Dictionary<string, string> cc_reg_IT = new Dictionary<string, string>();
             cc_reg_IT.Add("01", "Abruzzi");
             cc_reg_IT.Add("02", "Basilicata");
@@ -2118,7 +2118,7 @@ namespace MaxMind.GeoIP
             cc_reg_IT.Add("18", "Umbria");
             cc_reg_IT.Add("19", "Valle d'Aosta");
             cc_reg_IT.Add("20", "Veneto");
-            GEOIP_REGION_NAME.Add("IT", cc_reg_IT);
+            geoIPRegionName.Add("IT", cc_reg_IT);
             Dictionary<string, string> cc_reg_JM = new Dictionary<string, string>();
             cc_reg_JM.Add("01", "Clarendon");
             cc_reg_JM.Add("02", "Hanover");
@@ -2134,7 +2134,7 @@ namespace MaxMind.GeoIP
             cc_reg_JM.Add("15", "Trelawny");
             cc_reg_JM.Add("16", "Westmoreland");
             cc_reg_JM.Add("17", "Kingston");
-            GEOIP_REGION_NAME.Add("JM", cc_reg_JM);
+            geoIPRegionName.Add("JM", cc_reg_JM);
             Dictionary<string, string> cc_reg_JO = new Dictionary<string, string>();
             cc_reg_JO.Add("02", "Al Balqa'");
             cc_reg_JO.Add("07", "Ma");
@@ -2145,7 +2145,7 @@ namespace MaxMind.GeoIP
             cc_reg_JO.Add("13", "Az Zarqa");
             cc_reg_JO.Add("14", "Irbid");
             cc_reg_JO.Add("16", "Amman");
-            GEOIP_REGION_NAME.Add("JO", cc_reg_JO);
+            geoIPRegionName.Add("JO", cc_reg_JO);
             Dictionary<string, string> cc_reg_JP = new Dictionary<string, string>();
             cc_reg_JP.Add("01", "Aichi");
             cc_reg_JP.Add("02", "Akita");
@@ -2194,7 +2194,7 @@ namespace MaxMind.GeoIP
             cc_reg_JP.Add("45", "Yamaguchi");
             cc_reg_JP.Add("46", "Yamanashi");
             cc_reg_JP.Add("47", "Okinawa");
-            GEOIP_REGION_NAME.Add("JP", cc_reg_JP);
+            geoIPRegionName.Add("JP", cc_reg_JP);
             Dictionary<string, string> cc_reg_KE = new Dictionary<string, string>();
             cc_reg_KE.Add("01", "Central");
             cc_reg_KE.Add("02", "Coast");
@@ -2204,7 +2204,7 @@ namespace MaxMind.GeoIP
             cc_reg_KE.Add("07", "Nyanza");
             cc_reg_KE.Add("08", "Rift Valley");
             cc_reg_KE.Add("09", "Western");
-            GEOIP_REGION_NAME.Add("KE", cc_reg_KE);
+            geoIPRegionName.Add("KE", cc_reg_KE);
             Dictionary<string, string> cc_reg_KG = new Dictionary<string, string>();
             cc_reg_KG.Add("01", "Bishkek");
             cc_reg_KG.Add("02", "Chuy");
@@ -2215,7 +2215,7 @@ namespace MaxMind.GeoIP
             cc_reg_KG.Add("07", "Ysyk-Kol");
             cc_reg_KG.Add("08", "Osh");
             cc_reg_KG.Add("09", "Batken");
-            GEOIP_REGION_NAME.Add("KG", cc_reg_KG);
+            geoIPRegionName.Add("KG", cc_reg_KG);
             Dictionary<string, string> cc_reg_KH = new Dictionary<string, string>();
             cc_reg_KH.Add("00", "Banteay Meanchey");
             cc_reg_KH.Add("01", "Batdambang");
@@ -2239,17 +2239,17 @@ namespace MaxMind.GeoIP
             cc_reg_KH.Add("19", "Takeo");
             cc_reg_KH.Add("29", "Batdambang");
             cc_reg_KH.Add("30", "Pailin");
-            GEOIP_REGION_NAME.Add("KH", cc_reg_KH);
+            geoIPRegionName.Add("KH", cc_reg_KH);
             Dictionary<string, string> cc_reg_KI = new Dictionary<string, string>();
             cc_reg_KI.Add("01", "Gilbert Islands");
             cc_reg_KI.Add("02", "Line Islands");
             cc_reg_KI.Add("03", "Phoenix Islands");
-            GEOIP_REGION_NAME.Add("KI", cc_reg_KI);
+            geoIPRegionName.Add("KI", cc_reg_KI);
             Dictionary<string, string> cc_reg_KM = new Dictionary<string, string>();
             cc_reg_KM.Add("01", "Anjouan");
             cc_reg_KM.Add("02", "Grande Comore");
             cc_reg_KM.Add("03", "Moheli");
-            GEOIP_REGION_NAME.Add("KM", cc_reg_KM);
+            geoIPRegionName.Add("KM", cc_reg_KM);
             Dictionary<string, string> cc_reg_KN = new Dictionary<string, string>();
             cc_reg_KN.Add("01", "Christ Church Nichola Town");
             cc_reg_KN.Add("02", "Saint Anne Sandy Point");
@@ -2265,7 +2265,7 @@ namespace MaxMind.GeoIP
             cc_reg_KN.Add("12", "Saint Thomas Lowland");
             cc_reg_KN.Add("13", "Saint Thomas Middle Island");
             cc_reg_KN.Add("15", "Trinity Palmetto Point");
-            GEOIP_REGION_NAME.Add("KN", cc_reg_KN);
+            geoIPRegionName.Add("KN", cc_reg_KN);
             Dictionary<string, string> cc_reg_KP = new Dictionary<string, string>();
             cc_reg_KP.Add("01", "Chagang-do");
             cc_reg_KP.Add("03", "Hamgyong-namdo");
@@ -2280,7 +2280,7 @@ namespace MaxMind.GeoIP
             cc_reg_KP.Add("15", "P'yongan-namdo");
             cc_reg_KP.Add("17", "Hamgyong-bukto");
             cc_reg_KP.Add("18", "Najin Sonbong-si");
-            GEOIP_REGION_NAME.Add("KP", cc_reg_KP);
+            geoIPRegionName.Add("KP", cc_reg_KP);
             Dictionary<string, string> cc_reg_KR = new Dictionary<string, string>();
             cc_reg_KR.Add("01", "Cheju-do");
             cc_reg_KR.Add("03", "Cholla-bukto");
@@ -2298,7 +2298,7 @@ namespace MaxMind.GeoIP
             cc_reg_KR.Add("19", "Taejon-jikhalsi");
             cc_reg_KR.Add("20", "Kyongsang-namdo");
             cc_reg_KR.Add("21", "Ulsan-gwangyoksi");
-            GEOIP_REGION_NAME.Add("KR", cc_reg_KR);
+            geoIPRegionName.Add("KR", cc_reg_KR);
             Dictionary<string, string> cc_reg_KW = new Dictionary<string, string>();
             cc_reg_KW.Add("01", "Al Ahmadi");
             cc_reg_KW.Add("02", "Al Kuwayt");
@@ -2306,7 +2306,7 @@ namespace MaxMind.GeoIP
             cc_reg_KW.Add("07", "Al Farwaniyah");
             cc_reg_KW.Add("08", "Hawalli");
             cc_reg_KW.Add("09", "Mubarak al Kabir");
-            GEOIP_REGION_NAME.Add("KW", cc_reg_KW);
+            geoIPRegionName.Add("KW", cc_reg_KW);
             Dictionary<string, string> cc_reg_KY = new Dictionary<string, string>();
             cc_reg_KY.Add("01", "Creek");
             cc_reg_KY.Add("02", "Eastern");
@@ -2316,7 +2316,7 @@ namespace MaxMind.GeoIP
             cc_reg_KY.Add("06", "Stake Bay");
             cc_reg_KY.Add("07", "West End");
             cc_reg_KY.Add("08", "Western");
-            GEOIP_REGION_NAME.Add("KY", cc_reg_KY);
+            geoIPRegionName.Add("KY", cc_reg_KY);
             Dictionary<string, string> cc_reg_KZ = new Dictionary<string, string>();
             cc_reg_KZ.Add("01", "Almaty");
             cc_reg_KZ.Add("02", "Almaty City");
@@ -2335,7 +2335,7 @@ namespace MaxMind.GeoIP
             cc_reg_KZ.Add("15", "East Kazakhstan");
             cc_reg_KZ.Add("16", "North Kazakhstan");
             cc_reg_KZ.Add("17", "Zhambyl");
-            GEOIP_REGION_NAME.Add("KZ", cc_reg_KZ);
+            geoIPRegionName.Add("KZ", cc_reg_KZ);
             Dictionary<string, string> cc_reg_LA = new Dictionary<string, string>();
             cc_reg_LA.Add("01", "Attapu");
             cc_reg_LA.Add("02", "Champasak");
@@ -2350,7 +2350,7 @@ namespace MaxMind.GeoIP
             cc_reg_LA.Add("13", "Xaignabouri");
             cc_reg_LA.Add("14", "Xiangkhoang");
             cc_reg_LA.Add("17", "Louangphrabang");
-            GEOIP_REGION_NAME.Add("LA", cc_reg_LA);
+            geoIPRegionName.Add("LA", cc_reg_LA);
             Dictionary<string, string> cc_reg_LB = new Dictionary<string, string>();
             cc_reg_LB.Add("01", "Beqaa");
             cc_reg_LB.Add("02", "Al Janub");
@@ -2363,7 +2363,7 @@ namespace MaxMind.GeoIP
             cc_reg_LB.Add("09", "Liban-Nord");
             cc_reg_LB.Add("10", "Aakk,r");
             cc_reg_LB.Add("11", "Baalbek-Hermel");
-            GEOIP_REGION_NAME.Add("LB", cc_reg_LB);
+            geoIPRegionName.Add("LB", cc_reg_LB);
             Dictionary<string, string> cc_reg_LC = new Dictionary<string, string>();
             cc_reg_LC.Add("01", "Anse-la-Raye");
             cc_reg_LC.Add("02", "Dauphin");
@@ -2376,7 +2376,7 @@ namespace MaxMind.GeoIP
             cc_reg_LC.Add("09", "Soufriere");
             cc_reg_LC.Add("10", "Vieux-Fort");
             cc_reg_LC.Add("11", "Praslin");
-            GEOIP_REGION_NAME.Add("LC", cc_reg_LC);
+            geoIPRegionName.Add("LC", cc_reg_LC);
             Dictionary<string, string> cc_reg_LI = new Dictionary<string, string>();
             cc_reg_LI.Add("01", "Balzers");
             cc_reg_LI.Add("02", "Eschen");
@@ -2391,7 +2391,7 @@ namespace MaxMind.GeoIP
             cc_reg_LI.Add("11", "Vaduz");
             cc_reg_LI.Add("21", "Gbarpolu");
             cc_reg_LI.Add("22", "River Gee");
-            GEOIP_REGION_NAME.Add("LI", cc_reg_LI);
+            geoIPRegionName.Add("LI", cc_reg_LI);
             Dictionary<string, string> cc_reg_LK = new Dictionary<string, string>();
             cc_reg_LK.Add("01", "Amparai");
             cc_reg_LK.Add("02", "Anuradhapura");
@@ -2425,7 +2425,7 @@ namespace MaxMind.GeoIP
             cc_reg_LK.Add("34", "Southern");
             cc_reg_LK.Add("35", "Uva");
             cc_reg_LK.Add("36", "Western");
-            GEOIP_REGION_NAME.Add("LK", cc_reg_LK);
+            geoIPRegionName.Add("LK", cc_reg_LK);
             Dictionary<string, string> cc_reg_LR = new Dictionary<string, string>();
             cc_reg_LR.Add("01", "Bong");
             cc_reg_LR.Add("04", "Grand Cape Mount");
@@ -2444,7 +2444,7 @@ namespace MaxMind.GeoIP
             cc_reg_LR.Add("20", "Lofa");
             cc_reg_LR.Add("21", "Gbarpolu");
             cc_reg_LR.Add("22", "River Gee");
-            GEOIP_REGION_NAME.Add("LR", cc_reg_LR);
+            geoIPRegionName.Add("LR", cc_reg_LR);
             Dictionary<string, string> cc_reg_LS = new Dictionary<string, string>();
             cc_reg_LS.Add("10", "Berea");
             cc_reg_LS.Add("11", "Butha-Buthe");
@@ -2456,7 +2456,7 @@ namespace MaxMind.GeoIP
             cc_reg_LS.Add("17", "Qachas Nek");
             cc_reg_LS.Add("18", "Quthing");
             cc_reg_LS.Add("19", "Thaba-Tseka");
-            GEOIP_REGION_NAME.Add("LS", cc_reg_LS);
+            geoIPRegionName.Add("LS", cc_reg_LS);
             Dictionary<string, string> cc_reg_LT = new Dictionary<string, string>();
             cc_reg_LT.Add("56", "Alytaus Apskritis");
             cc_reg_LT.Add("57", "Kauno Apskritis");
@@ -2468,12 +2468,12 @@ namespace MaxMind.GeoIP
             cc_reg_LT.Add("63", "Telsiu Apskritis");
             cc_reg_LT.Add("64", "Utenos Apskritis");
             cc_reg_LT.Add("65", "Vilniaus Apskritis");
-            GEOIP_REGION_NAME.Add("LT", cc_reg_LT);
+            geoIPRegionName.Add("LT", cc_reg_LT);
             Dictionary<string, string> cc_reg_LU = new Dictionary<string, string>();
             cc_reg_LU.Add("01", "Diekirch");
             cc_reg_LU.Add("02", "Grevenmacher");
             cc_reg_LU.Add("03", "Luxembourg");
-            GEOIP_REGION_NAME.Add("LU", cc_reg_LU);
+            geoIPRegionName.Add("LU", cc_reg_LU);
             Dictionary<string, string> cc_reg_LV = new Dictionary<string, string>();
             cc_reg_LV.Add("01", "Aizkraukles");
             cc_reg_LV.Add("02", "Aluksnes");
@@ -2508,7 +2508,7 @@ namespace MaxMind.GeoIP
             cc_reg_LV.Add("31", "Valmieras");
             cc_reg_LV.Add("32", "Ventspils");
             cc_reg_LV.Add("33", "Ventspils");
-            GEOIP_REGION_NAME.Add("LV", cc_reg_LV);
+            geoIPRegionName.Add("LV", cc_reg_LV);
             Dictionary<string, string> cc_reg_LY = new Dictionary<string, string>();
             cc_reg_LY.Add("03", "Al Aziziyah");
             cc_reg_LY.Add("05", "Al Jufrah");
@@ -2535,7 +2535,7 @@ namespace MaxMind.GeoIP
             cc_reg_LY.Add("60", "Surt");
             cc_reg_LY.Add("61", "Tarabulus");
             cc_reg_LY.Add("62", "Yafran");
-            GEOIP_REGION_NAME.Add("LY", cc_reg_LY);
+            geoIPRegionName.Add("LY", cc_reg_LY);
             Dictionary<string, string> cc_reg_MA = new Dictionary<string, string>();
             cc_reg_MA.Add("01", "Agadir");
             cc_reg_MA.Add("02", "Al Hoceima");
@@ -2591,12 +2591,12 @@ namespace MaxMind.GeoIP
             cc_reg_MA.Add("57", "Tanger-Tetouan");
             cc_reg_MA.Add("58", "Taza-Al Hoceima-Taounate");
             cc_reg_MA.Add("59", "La,youne-Boujdour-Sakia El Hamra");
-            GEOIP_REGION_NAME.Add("MA", cc_reg_MA);
+            geoIPRegionName.Add("MA", cc_reg_MA);
             Dictionary<string, string> cc_reg_MC = new Dictionary<string, string>();
             cc_reg_MC.Add("01", "La Condamine");
             cc_reg_MC.Add("02", "Monaco");
             cc_reg_MC.Add("03", "Monte-Carlo");
-            GEOIP_REGION_NAME.Add("MC", cc_reg_MC);
+            geoIPRegionName.Add("MC", cc_reg_MC);
             Dictionary<string, string> cc_reg_MD = new Dictionary<string, string>();
             cc_reg_MD.Add("46", "Balti");
             cc_reg_MD.Add("47", "Cahul");
@@ -2643,7 +2643,7 @@ namespace MaxMind.GeoIP
             cc_reg_MD.Add("90", "Taraclia");
             cc_reg_MD.Add("91", "Telenesti");
             cc_reg_MD.Add("92", "Ungheni");
-            GEOIP_REGION_NAME.Add("MD", cc_reg_MD);
+            geoIPRegionName.Add("MD", cc_reg_MD);
             Dictionary<string, string> cc_reg_MG = new Dictionary<string, string>();
             cc_reg_MG.Add("01", "Antsiranana");
             cc_reg_MG.Add("02", "Fianarantsoa");
@@ -2651,7 +2651,7 @@ namespace MaxMind.GeoIP
             cc_reg_MG.Add("04", "Toamasina");
             cc_reg_MG.Add("05", "Antananarivo");
             cc_reg_MG.Add("06", "Toliara");
-            GEOIP_REGION_NAME.Add("MG", cc_reg_MG);
+            geoIPRegionName.Add("MG", cc_reg_MG);
             Dictionary<string, string> cc_reg_MK = new Dictionary<string, string>();
             cc_reg_MK.Add("01", "Aracinovo");
             cc_reg_MK.Add("02", "Bac");
@@ -2776,7 +2776,7 @@ namespace MaxMind.GeoIP
             cc_reg_MK.Add("C4", "Zitose");
             cc_reg_MK.Add("C5", "Zletovo");
             cc_reg_MK.Add("C6", "Zrnovci");
-            GEOIP_REGION_NAME.Add("MK", cc_reg_MK);
+            geoIPRegionName.Add("MK", cc_reg_MK);
             Dictionary<string, string> cc_reg_ML = new Dictionary<string, string>();
             cc_reg_ML.Add("01", "Bamako");
             cc_reg_ML.Add("03", "Kayes");
@@ -2787,7 +2787,7 @@ namespace MaxMind.GeoIP
             cc_reg_ML.Add("08", "Tombouctou");
             cc_reg_ML.Add("09", "Gao");
             cc_reg_ML.Add("10", "Kidal");
-            GEOIP_REGION_NAME.Add("ML", cc_reg_ML);
+            geoIPRegionName.Add("ML", cc_reg_ML);
             Dictionary<string, string> cc_reg_MM = new Dictionary<string, string>();
             cc_reg_MM.Add("01", "Rakhine State");
             cc_reg_MM.Add("02", "Chin State");
@@ -2804,7 +2804,7 @@ namespace MaxMind.GeoIP
             cc_reg_MM.Add("13", "Mon State");
             cc_reg_MM.Add("14", "Rangoon");
             cc_reg_MM.Add("17", "Yangon");
-            GEOIP_REGION_NAME.Add("MM", cc_reg_MM);
+            geoIPRegionName.Add("MM", cc_reg_MM);
             Dictionary<string, string> cc_reg_MN = new Dictionary<string, string>();
             cc_reg_MN.Add("01", "Arhangay");
             cc_reg_MN.Add("02", "Bayanhongor");
@@ -2830,11 +2830,11 @@ namespace MaxMind.GeoIP
             cc_reg_MN.Add("23", "Darhan-Uul");
             cc_reg_MN.Add("24", "Govisumber");
             cc_reg_MN.Add("25", "Orhon");
-            GEOIP_REGION_NAME.Add("MN", cc_reg_MN);
+            geoIPRegionName.Add("MN", cc_reg_MN);
             Dictionary<string, string> cc_reg_MO = new Dictionary<string, string>();
             cc_reg_MO.Add("01", "Ilhas");
             cc_reg_MO.Add("02", "Macau");
-            GEOIP_REGION_NAME.Add("MO", cc_reg_MO);
+            geoIPRegionName.Add("MO", cc_reg_MO);
             Dictionary<string, string> cc_reg_MR = new Dictionary<string, string>();
             cc_reg_MR.Add("01", "Hodh Ech Chargui");
             cc_reg_MR.Add("02", "Hodh El Gharbi");
@@ -2848,12 +2848,12 @@ namespace MaxMind.GeoIP
             cc_reg_MR.Add("10", "Guidimaka");
             cc_reg_MR.Add("11", "Tiris Zemmour");
             cc_reg_MR.Add("12", "Inchiri");
-            GEOIP_REGION_NAME.Add("MR", cc_reg_MR);
+            geoIPRegionName.Add("MR", cc_reg_MR);
             Dictionary<string, string> cc_reg_MS = new Dictionary<string, string>();
             cc_reg_MS.Add("01", "Saint Anthony");
             cc_reg_MS.Add("02", "Saint Georges");
             cc_reg_MS.Add("03", "Saint Peter");
-            GEOIP_REGION_NAME.Add("MS", cc_reg_MS);
+            geoIPRegionName.Add("MS", cc_reg_MS);
             Dictionary<string, string> cc_reg_MU = new Dictionary<string, string>();
             cc_reg_MU.Add("12", "Black River");
             cc_reg_MU.Add("13", "Flacq");
@@ -2867,7 +2867,7 @@ namespace MaxMind.GeoIP
             cc_reg_MU.Add("21", "Agalega Islands");
             cc_reg_MU.Add("22", "Cargados Carajos");
             cc_reg_MU.Add("23", "Rodrigues");
-            GEOIP_REGION_NAME.Add("MU", cc_reg_MU);
+            geoIPRegionName.Add("MU", cc_reg_MU);
             Dictionary<string, string> cc_reg_MV = new Dictionary<string, string>();
             cc_reg_MV.Add("01", "Seenu");
             cc_reg_MV.Add("02", "Aliff");
@@ -2889,7 +2889,7 @@ namespace MaxMind.GeoIP
             cc_reg_MV.Add("28", "Gaafu Daalu");
             cc_reg_MV.Add("29", "Naviyani");
             cc_reg_MV.Add("40", "Male");
-            GEOIP_REGION_NAME.Add("MV", cc_reg_MV);
+            geoIPRegionName.Add("MV", cc_reg_MV);
             Dictionary<string, string> cc_reg_MW = new Dictionary<string, string>();
             cc_reg_MW.Add("02", "Chikwawa");
             cc_reg_MW.Add("03", "Chiradzulu");
@@ -2918,7 +2918,7 @@ namespace MaxMind.GeoIP
             cc_reg_MW.Add("28", "Machinga");
             cc_reg_MW.Add("29", "Mulanje");
             cc_reg_MW.Add("30", "Phalombe");
-            GEOIP_REGION_NAME.Add("MW", cc_reg_MW);
+            geoIPRegionName.Add("MW", cc_reg_MW);
             Dictionary<string, string> cc_reg_MX = new Dictionary<string, string>();
             cc_reg_MX.Add("01", "Aguascalientes");
             cc_reg_MX.Add("02", "Baja California");
@@ -2952,7 +2952,7 @@ namespace MaxMind.GeoIP
             cc_reg_MX.Add("30", "Veracruz-Llave");
             cc_reg_MX.Add("31", "Yucatan");
             cc_reg_MX.Add("32", "Zacatecas");
-            GEOIP_REGION_NAME.Add("MX", cc_reg_MX);
+            geoIPRegionName.Add("MX", cc_reg_MX);
             Dictionary<string, string> cc_reg_MY = new Dictionary<string, string>();
             cc_reg_MY.Add("01", "Johor");
             cc_reg_MY.Add("02", "Kedah");
@@ -2970,7 +2970,7 @@ namespace MaxMind.GeoIP
             cc_reg_MY.Add("15", "Labuan");
             cc_reg_MY.Add("16", "Sabah");
             cc_reg_MY.Add("17", "Putrajaya");
-            GEOIP_REGION_NAME.Add("MY", cc_reg_MY);
+            geoIPRegionName.Add("MY", cc_reg_MY);
             Dictionary<string, string> cc_reg_MZ = new Dictionary<string, string>();
             cc_reg_MZ.Add("01", "Cabo Delgado");
             cc_reg_MZ.Add("02", "Gaza");
@@ -2983,7 +2983,7 @@ namespace MaxMind.GeoIP
             cc_reg_MZ.Add("09", "Zambezia");
             cc_reg_MZ.Add("10", "Manica");
             cc_reg_MZ.Add("11", "Maputo");
-            GEOIP_REGION_NAME.Add("MZ", cc_reg_MZ);
+            geoIPRegionName.Add("MZ", cc_reg_MZ);
             Dictionary<string, string> cc_reg_NA = new Dictionary<string, string>();
             cc_reg_NA.Add("01", "Bethanien");
             cc_reg_NA.Add("02", "Caprivi Oos");
@@ -3023,7 +3023,7 @@ namespace MaxMind.GeoIP
             cc_reg_NA.Add("37", "Oshana");
             cc_reg_NA.Add("38", "Oshikoto");
             cc_reg_NA.Add("39", "Otjozondjupa");
-            GEOIP_REGION_NAME.Add("NA", cc_reg_NA);
+            geoIPRegionName.Add("NA", cc_reg_NA);
             Dictionary<string, string> cc_reg_NE = new Dictionary<string, string>();
             cc_reg_NE.Add("01", "Agadez");
             cc_reg_NE.Add("02", "Diffa");
@@ -3033,7 +3033,7 @@ namespace MaxMind.GeoIP
             cc_reg_NE.Add("06", "Tahoua");
             cc_reg_NE.Add("07", "Zinder");
             cc_reg_NE.Add("08", "Niamey");
-            GEOIP_REGION_NAME.Add("NE", cc_reg_NE);
+            geoIPRegionName.Add("NE", cc_reg_NE);
             Dictionary<string, string> cc_reg_NG = new Dictionary<string, string>();
             cc_reg_NG.Add("05", "Lagos");
             cc_reg_NG.Add("10", "Rivers");
@@ -3076,7 +3076,7 @@ namespace MaxMind.GeoIP
             cc_reg_NG.Add("55", "Gombe");
             cc_reg_NG.Add("56", "Nassarawa");
             cc_reg_NG.Add("57", "Zamfara");
-            GEOIP_REGION_NAME.Add("NG", cc_reg_NG);
+            geoIPRegionName.Add("NG", cc_reg_NG);
             Dictionary<string, string> cc_reg_NI = new Dictionary<string, string>();
             cc_reg_NI.Add("01", "Boaco");
             cc_reg_NI.Add("02", "Carazo");
@@ -3096,7 +3096,7 @@ namespace MaxMind.GeoIP
             cc_reg_NI.Add("16", "Zelaya");
             cc_reg_NI.Add("17", "Autonoma Atlantico Norte");
             cc_reg_NI.Add("18", "Name Autonoma Atlantico Sur");
-            GEOIP_REGION_NAME.Add("NI", cc_reg_NI);
+            geoIPRegionName.Add("NI", cc_reg_NI);
             Dictionary<string, string> cc_reg_NL = new Dictionary<string, string>();
             cc_reg_NL.Add("01", "Drenthe");
             cc_reg_NL.Add("02", "Friesland");
@@ -3114,7 +3114,7 @@ namespace MaxMind.GeoIP
             cc_reg_NL.Add("14", "Lelystad");
             cc_reg_NL.Add("15", "Overijssel");
             cc_reg_NL.Add("16", "Flevoland");
-            GEOIP_REGION_NAME.Add("NL", cc_reg_NL);
+            geoIPRegionName.Add("NL", cc_reg_NL);
             Dictionary<string, string> cc_reg_NO = new Dictionary<string, string>();
             cc_reg_NO.Add("01", "Akershus");
             cc_reg_NO.Add("02", "Aust-Agder");
@@ -3135,7 +3135,7 @@ namespace MaxMind.GeoIP
             cc_reg_NO.Add("18", "Troms");
             cc_reg_NO.Add("19", "Vest-Agder");
             cc_reg_NO.Add("20", "Vestfold");
-            GEOIP_REGION_NAME.Add("NO", cc_reg_NO);
+            geoIPRegionName.Add("NO", cc_reg_NO);
             Dictionary<string, string> cc_reg_NP = new Dictionary<string, string>();
             cc_reg_NP.Add("01", "Bagmati");
             cc_reg_NP.Add("02", "Bheri");
@@ -3151,7 +3151,7 @@ namespace MaxMind.GeoIP
             cc_reg_NP.Add("12", "Rapti");
             cc_reg_NP.Add("13", "Sagarmatha");
             cc_reg_NP.Add("14", "Seti");
-            GEOIP_REGION_NAME.Add("NP", cc_reg_NP);
+            geoIPRegionName.Add("NP", cc_reg_NP);
             Dictionary<string, string> cc_reg_NR = new Dictionary<string, string>();
             cc_reg_NR.Add("01", "Aiwo");
             cc_reg_NR.Add("02", "Anabar");
@@ -3167,7 +3167,7 @@ namespace MaxMind.GeoIP
             cc_reg_NR.Add("12", "Nibok");
             cc_reg_NR.Add("13", "Uaboe");
             cc_reg_NR.Add("14", "Yaren");
-            GEOIP_REGION_NAME.Add("NR", cc_reg_NR);
+            geoIPRegionName.Add("NR", cc_reg_NR);
             Dictionary<string, string> cc_reg_NZ = new Dictionary<string, string>();
             cc_reg_NZ.Add("10", "Chatham Islands");
             cc_reg_NZ.Add("85", "Waikato");
@@ -3186,7 +3186,7 @@ namespace MaxMind.GeoIP
             cc_reg_NZ.Add("G1", "Waikato");
             cc_reg_NZ.Add("G2", "Wellington");
             cc_reg_NZ.Add("G3", "West Coast");
-            GEOIP_REGION_NAME.Add("NZ", cc_reg_NZ);
+            geoIPRegionName.Add("NZ", cc_reg_NZ);
             Dictionary<string, string> cc_reg_OM = new Dictionary<string, string>();
             cc_reg_OM.Add("01", "Ad Dakhiliyah");
             cc_reg_OM.Add("02", "Al Batinah");
@@ -3196,7 +3196,7 @@ namespace MaxMind.GeoIP
             cc_reg_OM.Add("06", "Masqat");
             cc_reg_OM.Add("07", "Musandam");
             cc_reg_OM.Add("08", "Zufar");
-            GEOIP_REGION_NAME.Add("OM", cc_reg_OM);
+            geoIPRegionName.Add("OM", cc_reg_OM);
             Dictionary<string, string> cc_reg_PA = new Dictionary<string, string>();
             cc_reg_PA.Add("01", "Bocas del Toro");
             cc_reg_PA.Add("02", "Chiriqui");
@@ -3208,7 +3208,7 @@ namespace MaxMind.GeoIP
             cc_reg_PA.Add("08", "Panama");
             cc_reg_PA.Add("09", "San Blas");
             cc_reg_PA.Add("10", "Veraguas");
-            GEOIP_REGION_NAME.Add("PA", cc_reg_PA);
+            geoIPRegionName.Add("PA", cc_reg_PA);
             Dictionary<string, string> cc_reg_PE = new Dictionary<string, string>();
             cc_reg_PE.Add("01", "Amazonas");
             cc_reg_PE.Add("02", "Ancash");
@@ -3235,7 +3235,7 @@ namespace MaxMind.GeoIP
             cc_reg_PE.Add("23", "Tacna");
             cc_reg_PE.Add("24", "Tumbes");
             cc_reg_PE.Add("25", "Ucayali");
-            GEOIP_REGION_NAME.Add("PE", cc_reg_PE);
+            geoIPRegionName.Add("PE", cc_reg_PE);
             Dictionary<string, string> cc_reg_PG = new Dictionary<string, string>();
             cc_reg_PG.Add("01", "Central");
             cc_reg_PG.Add("02", "Gulf");
@@ -3257,7 +3257,7 @@ namespace MaxMind.GeoIP
             cc_reg_PG.Add("18", "Sandaun");
             cc_reg_PG.Add("19", "Enga");
             cc_reg_PG.Add("20", "National Capital");
-            GEOIP_REGION_NAME.Add("PG", cc_reg_PG);
+            geoIPRegionName.Add("PG", cc_reg_PG);
             Dictionary<string, string> cc_reg_PH = new Dictionary<string, string>();
             cc_reg_PH.Add("01", "Abra");
             cc_reg_PH.Add("02", "Agusan del Norte");
@@ -3394,7 +3394,7 @@ namespace MaxMind.GeoIP
             cc_reg_PH.Add("G8", "Aurora");
             cc_reg_PH.Add("H2", "Quezon");
             cc_reg_PH.Add("H3", "Negros Occidental");
-            GEOIP_REGION_NAME.Add("PH", cc_reg_PH);
+            geoIPRegionName.Add("PH", cc_reg_PH);
             Dictionary<string, string> cc_reg_PK = new Dictionary<string, string>();
             cc_reg_PK.Add("01", "Federally Administered Tribal Areas");
             cc_reg_PK.Add("02", "Balochistan");
@@ -3404,7 +3404,7 @@ namespace MaxMind.GeoIP
             cc_reg_PK.Add("06", "Azad Kashmir");
             cc_reg_PK.Add("07", "Northern Areas");
             cc_reg_PK.Add("08", "Islamabad");
-            GEOIP_REGION_NAME.Add("PK", cc_reg_PK);
+            geoIPRegionName.Add("PK", cc_reg_PK);
             Dictionary<string, string> cc_reg_PL = new Dictionary<string, string>();
             cc_reg_PL.Add("23", "Biala Podlaska");
             cc_reg_PL.Add("24", "Bialystok");
@@ -3471,11 +3471,11 @@ namespace MaxMind.GeoIP
             cc_reg_PL.Add("85", "Warminsko-Mazurskie");
             cc_reg_PL.Add("86", "Wielkopolskie");
             cc_reg_PL.Add("87", "Zachodniopomorskie");
-            GEOIP_REGION_NAME.Add("PL", cc_reg_PL);
+            geoIPRegionName.Add("PL", cc_reg_PL);
             Dictionary<string, string> cc_reg_PS = new Dictionary<string, string>();
             cc_reg_PS.Add("GZ", "Gaza");
             cc_reg_PS.Add("WE", "West Bank");
-            GEOIP_REGION_NAME.Add("PS", cc_reg_PS);
+            geoIPRegionName.Add("PS", cc_reg_PS);
             Dictionary<string, string> cc_reg_PT = new Dictionary<string, string>();
             cc_reg_PT.Add("02", "Aveiro");
             cc_reg_PT.Add("03", "Beja");
@@ -3497,7 +3497,7 @@ namespace MaxMind.GeoIP
             cc_reg_PT.Add("21", "Vila Real");
             cc_reg_PT.Add("22", "Viseu");
             cc_reg_PT.Add("23", "Azores");
-            GEOIP_REGION_NAME.Add("PT", cc_reg_PT);
+            geoIPRegionName.Add("PT", cc_reg_PT);
             Dictionary<string, string> cc_reg_PY = new Dictionary<string, string>();
             cc_reg_PY.Add("01", "Alto Parana");
             cc_reg_PY.Add("02", "Amambay");
@@ -3518,7 +3518,7 @@ namespace MaxMind.GeoIP
             cc_reg_PY.Add("20", "Chaco");
             cc_reg_PY.Add("21", "Nueva Asuncion");
             cc_reg_PY.Add("23", "Alto Paraguay");
-            GEOIP_REGION_NAME.Add("PY", cc_reg_PY);
+            geoIPRegionName.Add("PY", cc_reg_PY);
             Dictionary<string, string> cc_reg_QA = new Dictionary<string, string>();
             cc_reg_QA.Add("01", "Ad Dawhah");
             cc_reg_QA.Add("02", "Al Ghuwariyah");
@@ -3531,7 +3531,7 @@ namespace MaxMind.GeoIP
             cc_reg_QA.Add("10", "Al Wakrah");
             cc_reg_QA.Add("11", "Jariyan al Batnah");
             cc_reg_QA.Add("12", "Umm Sa'id");
-            GEOIP_REGION_NAME.Add("QA", cc_reg_QA);
+            geoIPRegionName.Add("QA", cc_reg_QA);
             Dictionary<string, string> cc_reg_RO = new Dictionary<string, string>();
             cc_reg_RO.Add("01", "Alba");
             cc_reg_RO.Add("02", "Arad");
@@ -3575,11 +3575,11 @@ namespace MaxMind.GeoIP
             cc_reg_RO.Add("41", "Calarasi");
             cc_reg_RO.Add("42", "Giurgiu");
             cc_reg_RO.Add("43", "Ilfov");
-            GEOIP_REGION_NAME.Add("RO", cc_reg_RO);
+            geoIPRegionName.Add("RO", cc_reg_RO);
             Dictionary<string, string> cc_reg_RS = new Dictionary<string, string>();
             cc_reg_RS.Add("01", "Kosovo");
             cc_reg_RS.Add("02", "Vojvodina");
-            GEOIP_REGION_NAME.Add("RS", cc_reg_RS);
+            geoIPRegionName.Add("RS", cc_reg_RS);
             Dictionary<string, string> cc_reg_RU = new Dictionary<string, string>();
             cc_reg_RU.Add("01", "Adygeya, Republic of");
             cc_reg_RU.Add("02", "Aginsky Buryatsky AO");
@@ -3673,7 +3673,7 @@ namespace MaxMind.GeoIP
             cc_reg_RU.Add("90", "Permskiy Kray");
             cc_reg_RU.Add("91", "Krasnoyarskiy Kray");
             cc_reg_RU.Add("CI", "Chechnya Republic");
-            GEOIP_REGION_NAME.Add("RU", cc_reg_RU);
+            geoIPRegionName.Add("RU", cc_reg_RU);
             Dictionary<string, string> cc_reg_RW = new Dictionary<string, string>();
             cc_reg_RW.Add("01", "Butare");
             cc_reg_RW.Add("06", "Gitarama");
@@ -3684,7 +3684,7 @@ namespace MaxMind.GeoIP
             cc_reg_RW.Add("13", "Nord");
             cc_reg_RW.Add("14", "Ouest");
             cc_reg_RW.Add("15", "Sud");
-            GEOIP_REGION_NAME.Add("RW", cc_reg_RW);
+            geoIPRegionName.Add("RW", cc_reg_RW);
             Dictionary<string, string> cc_reg_SA = new Dictionary<string, string>();
             cc_reg_SA.Add("02", "Al Bahah");
             cc_reg_SA.Add("03", "Al Jawf");
@@ -3700,7 +3700,7 @@ namespace MaxMind.GeoIP
             cc_reg_SA.Add("17", "Jizan");
             cc_reg_SA.Add("19", "Tabuk");
             cc_reg_SA.Add("20", "Al Jawf");
-            GEOIP_REGION_NAME.Add("SA", cc_reg_SA);
+            geoIPRegionName.Add("SA", cc_reg_SA);
             Dictionary<string, string> cc_reg_SB = new Dictionary<string, string>();
             cc_reg_SB.Add("03", "Malaita");
             cc_reg_SB.Add("06", "Guadalcanal");
@@ -3711,7 +3711,7 @@ namespace MaxMind.GeoIP
             cc_reg_SB.Add("11", "Western");
             cc_reg_SB.Add("12", "Choiseul");
             cc_reg_SB.Add("13", "Rennell and Bellona");
-            GEOIP_REGION_NAME.Add("SB", cc_reg_SB);
+            geoIPRegionName.Add("SB", cc_reg_SB);
             Dictionary<string, string> cc_reg_SC = new Dictionary<string, string>();
             cc_reg_SC.Add("01", "Anse aux Pins");
             cc_reg_SC.Add("02", "Anse Boileau");
@@ -3736,7 +3736,7 @@ namespace MaxMind.GeoIP
             cc_reg_SC.Add("21", "Port Glaud");
             cc_reg_SC.Add("22", "Saint Louis");
             cc_reg_SC.Add("23", "Takamaka");
-            GEOIP_REGION_NAME.Add("SC", cc_reg_SC);
+            geoIPRegionName.Add("SC", cc_reg_SC);
             Dictionary<string, string> cc_reg_SD = new Dictionary<string, string>();
             cc_reg_SD.Add("27", "Al Wusta");
             cc_reg_SD.Add("28", "Al Istiwa'iyah");
@@ -3749,7 +3749,7 @@ namespace MaxMind.GeoIP
             cc_reg_SD.Add("35", "Upper Nile");
             cc_reg_SD.Add("40", "Al Wahadah State");
             cc_reg_SD.Add("44", "Central Equatoria State");
-            GEOIP_REGION_NAME.Add("SD", cc_reg_SD);
+            geoIPRegionName.Add("SD", cc_reg_SD);
             Dictionary<string, string> cc_reg_SE = new Dictionary<string, string>();
             cc_reg_SE.Add("01", "Alvsborgs Lan");
             cc_reg_SE.Add("02", "Blekinge Lan");
@@ -3777,12 +3777,12 @@ namespace MaxMind.GeoIP
             cc_reg_SE.Add("26", "Stockholms Lan");
             cc_reg_SE.Add("27", "Skane Lan");
             cc_reg_SE.Add("28", "Vastra Gotaland");
-            GEOIP_REGION_NAME.Add("SE", cc_reg_SE);
+            geoIPRegionName.Add("SE", cc_reg_SE);
             Dictionary<string, string> cc_reg_SH = new Dictionary<string, string>();
             cc_reg_SH.Add("01", "Ascension");
             cc_reg_SH.Add("02", "Saint Helena");
             cc_reg_SH.Add("03", "Tristan da Cunha");
-            GEOIP_REGION_NAME.Add("SH", cc_reg_SH);
+            geoIPRegionName.Add("SH", cc_reg_SH);
             Dictionary<string, string> cc_reg_SI = new Dictionary<string, string>();
             cc_reg_SI.Add("01", "Ajdovscina");
             cc_reg_SI.Add("02", "Beltinci");
@@ -3925,7 +3925,7 @@ namespace MaxMind.GeoIP
             cc_reg_SI.Add("N2", "Videm");
             cc_reg_SI.Add("N3", "Vojnik");
             cc_reg_SI.Add("N5", "Zalec");
-            GEOIP_REGION_NAME.Add("SI", cc_reg_SI);
+            geoIPRegionName.Add("SI", cc_reg_SI);
             Dictionary<string, string> cc_reg_SK = new Dictionary<string, string>();
             cc_reg_SK.Add("01", "Banska Bystrica");
             cc_reg_SK.Add("02", "Bratislava");
@@ -3935,13 +3935,13 @@ namespace MaxMind.GeoIP
             cc_reg_SK.Add("06", "Trencin");
             cc_reg_SK.Add("07", "Trnava");
             cc_reg_SK.Add("08", "Zilina");
-            GEOIP_REGION_NAME.Add("SK", cc_reg_SK);
+            geoIPRegionName.Add("SK", cc_reg_SK);
             Dictionary<string, string> cc_reg_SL = new Dictionary<string, string>();
             cc_reg_SL.Add("01", "Eastern");
             cc_reg_SL.Add("02", "Northern");
             cc_reg_SL.Add("03", "Southern");
             cc_reg_SL.Add("04", "Western Area");
-            GEOIP_REGION_NAME.Add("SL", cc_reg_SL);
+            geoIPRegionName.Add("SL", cc_reg_SL);
             Dictionary<string, string> cc_reg_SM = new Dictionary<string, string>();
             cc_reg_SM.Add("01", "Acquaviva");
             cc_reg_SM.Add("02", "Chiesanuova");
@@ -3952,7 +3952,7 @@ namespace MaxMind.GeoIP
             cc_reg_SM.Add("07", "San Marino");
             cc_reg_SM.Add("08", "Monte Giardino");
             cc_reg_SM.Add("09", "Serravalle");
-            GEOIP_REGION_NAME.Add("SM", cc_reg_SM);
+            geoIPRegionName.Add("SM", cc_reg_SM);
             Dictionary<string, string> cc_reg_SN = new Dictionary<string, string>();
             cc_reg_SN.Add("01", "Dakar");
             cc_reg_SN.Add("03", "Diourbel");
@@ -3967,7 +3967,7 @@ namespace MaxMind.GeoIP
             cc_reg_SN.Add("13", "Louga");
             cc_reg_SN.Add("14", "Saint-Louis");
             cc_reg_SN.Add("15", "Matam");
-            GEOIP_REGION_NAME.Add("SN", cc_reg_SN);
+            geoIPRegionName.Add("SN", cc_reg_SN);
             Dictionary<string, string> cc_reg_SO = new Dictionary<string, string>();
             cc_reg_SO.Add("01", "Bakool");
             cc_reg_SO.Add("02", "Banaadir");
@@ -3989,7 +3989,7 @@ namespace MaxMind.GeoIP
             cc_reg_SO.Add("20", "Woqooyi Galbeed");
             cc_reg_SO.Add("21", "Awdal");
             cc_reg_SO.Add("22", "Sool");
-            GEOIP_REGION_NAME.Add("SO", cc_reg_SO);
+            geoIPRegionName.Add("SO", cc_reg_SO);
             Dictionary<string, string> cc_reg_SR = new Dictionary<string, string>();
             cc_reg_SR.Add("10", "Brokopondo");
             cc_reg_SR.Add("11", "Commewijne");
@@ -4001,11 +4001,11 @@ namespace MaxMind.GeoIP
             cc_reg_SR.Add("17", "Saramacca");
             cc_reg_SR.Add("18", "Sipaliwini");
             cc_reg_SR.Add("19", "Wanica");
-            GEOIP_REGION_NAME.Add("SR", cc_reg_SR);
+            geoIPRegionName.Add("SR", cc_reg_SR);
             Dictionary<string, string> cc_reg_ST = new Dictionary<string, string>();
             cc_reg_ST.Add("01", "Principe");
             cc_reg_ST.Add("02", "Sao Tome");
-            GEOIP_REGION_NAME.Add("ST", cc_reg_ST);
+            geoIPRegionName.Add("ST", cc_reg_ST);
             Dictionary<string, string> cc_reg_SV = new Dictionary<string, string>();
             cc_reg_SV.Add("01", "Ahuachapan");
             cc_reg_SV.Add("02", "Cabanas");
@@ -4021,7 +4021,7 @@ namespace MaxMind.GeoIP
             cc_reg_SV.Add("12", "San Vicente");
             cc_reg_SV.Add("13", "Sonsonate");
             cc_reg_SV.Add("14", "Usulutan");
-            GEOIP_REGION_NAME.Add("SV", cc_reg_SV);
+            geoIPRegionName.Add("SV", cc_reg_SV);
             Dictionary<string, string> cc_reg_SY = new Dictionary<string, string>();
             cc_reg_SY.Add("01", "Al Hasakah");
             cc_reg_SY.Add("02", "Al Ladhiqiyah");
@@ -4037,14 +4037,14 @@ namespace MaxMind.GeoIP
             cc_reg_SY.Add("12", "Idlib");
             cc_reg_SY.Add("13", "Dimashq");
             cc_reg_SY.Add("14", "Tartus");
-            GEOIP_REGION_NAME.Add("SY", cc_reg_SY);
+            geoIPRegionName.Add("SY", cc_reg_SY);
             Dictionary<string, string> cc_reg_SZ = new Dictionary<string, string>();
             cc_reg_SZ.Add("01", "Hhohho");
             cc_reg_SZ.Add("02", "Lubombo");
             cc_reg_SZ.Add("03", "Manzini");
             cc_reg_SZ.Add("04", "Shiselweni");
             cc_reg_SZ.Add("05", "Praslin");
-            GEOIP_REGION_NAME.Add("SZ", cc_reg_SZ);
+            geoIPRegionName.Add("SZ", cc_reg_SZ);
             Dictionary<string, string> cc_reg_TD = new Dictionary<string, string>();
             cc_reg_TD.Add("01", "Batha");
             cc_reg_TD.Add("02", "Biltine");
@@ -4060,7 +4060,7 @@ namespace MaxMind.GeoIP
             cc_reg_TD.Add("12", "Ouaddai");
             cc_reg_TD.Add("13", "Salamat");
             cc_reg_TD.Add("14", "Tandjile");
-            GEOIP_REGION_NAME.Add("TD", cc_reg_TD);
+            geoIPRegionName.Add("TD", cc_reg_TD);
             Dictionary<string, string> cc_reg_TG = new Dictionary<string, string>();
             cc_reg_TG.Add("09", "Lama-Kara");
             cc_reg_TG.Add("18", "Tsevie");
@@ -4069,7 +4069,7 @@ namespace MaxMind.GeoIP
             cc_reg_TG.Add("24", "Maritime");
             cc_reg_TG.Add("25", "Plateaux");
             cc_reg_TG.Add("26", "Savanes");
-            GEOIP_REGION_NAME.Add("TG", cc_reg_TG);
+            geoIPRegionName.Add("TG", cc_reg_TG);
             Dictionary<string, string> cc_reg_TH = new Dictionary<string, string>();
             cc_reg_TH.Add("01", "Mae Hong Son");
             cc_reg_TH.Add("02", "Chiang Mai");
@@ -4149,19 +4149,19 @@ namespace MaxMind.GeoIP
             cc_reg_TH.Add("78", "Mukdahan");
             cc_reg_TH.Add("79", "Nong Bua Lamphu");
             cc_reg_TH.Add("80", "Sa Kaeo");
-            GEOIP_REGION_NAME.Add("TH", cc_reg_TH);
+            geoIPRegionName.Add("TH", cc_reg_TH);
             Dictionary<string, string> cc_reg_TJ = new Dictionary<string, string>();
             cc_reg_TJ.Add("01", "Kuhistoni Badakhshon");
             cc_reg_TJ.Add("02", "Khatlon");
             cc_reg_TJ.Add("03", "Sughd");
-            GEOIP_REGION_NAME.Add("TJ", cc_reg_TJ);
+            geoIPRegionName.Add("TJ", cc_reg_TJ);
             Dictionary<string, string> cc_reg_TM = new Dictionary<string, string>();
             cc_reg_TM.Add("01", "Ahal");
             cc_reg_TM.Add("02", "Balkan");
             cc_reg_TM.Add("03", "Dashoguz");
             cc_reg_TM.Add("04", "Lebap");
             cc_reg_TM.Add("05", "Mary");
-            GEOIP_REGION_NAME.Add("TM", cc_reg_TM);
+            geoIPRegionName.Add("TM", cc_reg_TM);
             Dictionary<string, string> cc_reg_TN = new Dictionary<string, string>();
             cc_reg_TN.Add("02", "Kasserine");
             cc_reg_TN.Add("03", "Kairouan");
@@ -4186,12 +4186,12 @@ namespace MaxMind.GeoIP
             cc_reg_TN.Add("35", "Tozeur");
             cc_reg_TN.Add("36", "Tunis");
             cc_reg_TN.Add("37", "Zaghouan");
-            GEOIP_REGION_NAME.Add("TN", cc_reg_TN);
+            geoIPRegionName.Add("TN", cc_reg_TN);
             Dictionary<string, string> cc_reg_TO = new Dictionary<string, string>();
             cc_reg_TO.Add("01", "Ha");
             cc_reg_TO.Add("02", "Tongatapu");
             cc_reg_TO.Add("03", "Vava");
-            GEOIP_REGION_NAME.Add("TO", cc_reg_TO);
+            geoIPRegionName.Add("TO", cc_reg_TO);
             Dictionary<string, string> cc_reg_TR = new Dictionary<string, string>();
             cc_reg_TR.Add("02", "Adiyaman");
             cc_reg_TR.Add("03", "Afyonkarahisar");
@@ -4274,7 +4274,7 @@ namespace MaxMind.GeoIP
             cc_reg_TR.Add("91", "Osmaniye");
             cc_reg_TR.Add("92", "Yalova");
             cc_reg_TR.Add("93", "Duzce");
-            GEOIP_REGION_NAME.Add("TR", cc_reg_TR);
+            geoIPRegionName.Add("TR", cc_reg_TR);
             Dictionary<string, string> cc_reg_TT = new Dictionary<string, string>();
             cc_reg_TT.Add("01", "Arima");
             cc_reg_TT.Add("02", "Caroni");
@@ -4288,13 +4288,13 @@ namespace MaxMind.GeoIP
             cc_reg_TT.Add("10", "San Fernando");
             cc_reg_TT.Add("11", "Tobago");
             cc_reg_TT.Add("12", "Victoria");
-            GEOIP_REGION_NAME.Add("TT", cc_reg_TT);
+            geoIPRegionName.Add("TT", cc_reg_TT);
             Dictionary<string, string> cc_reg_TW = new Dictionary<string, string>();
             cc_reg_TW.Add("01", "Fu-chien");
             cc_reg_TW.Add("02", "Kao-hsiung");
             cc_reg_TW.Add("03", "T'ai-pei");
             cc_reg_TW.Add("04", "T'ai-wan");
-            GEOIP_REGION_NAME.Add("TW", cc_reg_TW);
+            geoIPRegionName.Add("TW", cc_reg_TW);
             Dictionary<string, string> cc_reg_TZ = new Dictionary<string, string>();
             cc_reg_TZ.Add("02", "Pwani");
             cc_reg_TZ.Add("03", "Dodoma");
@@ -4322,7 +4322,7 @@ namespace MaxMind.GeoIP
             cc_reg_TZ.Add("25", "Zanzibar Urban");
             cc_reg_TZ.Add("26", "Arusha");
             cc_reg_TZ.Add("27", "Manyara");
-            GEOIP_REGION_NAME.Add("TZ", cc_reg_TZ);
+            geoIPRegionName.Add("TZ", cc_reg_TZ);
             Dictionary<string, string> cc_reg_UA = new Dictionary<string, string>();
             cc_reg_UA.Add("01", "Cherkas'ka Oblast'");
             cc_reg_UA.Add("02", "Chernihivs'ka Oblast'");
@@ -4351,7 +4351,7 @@ namespace MaxMind.GeoIP
             cc_reg_UA.Add("25", "Zakarpats'ka Oblast'");
             cc_reg_UA.Add("26", "Zaporiz'ka Oblast'");
             cc_reg_UA.Add("27", "Zhytomyrs'ka Oblast'");
-            GEOIP_REGION_NAME.Add("UA", cc_reg_UA);
+            geoIPRegionName.Add("UA", cc_reg_UA);
             Dictionary<string, string> cc_reg_UG = new Dictionary<string, string>();
             cc_reg_UG.Add("05", "Busoga");
             cc_reg_UG.Add("08", "Karamoja");
@@ -4397,7 +4397,7 @@ namespace MaxMind.GeoIP
             cc_reg_UG.Add("95", "Soroti");
             cc_reg_UG.Add("96", "Wakiso");
             cc_reg_UG.Add("97", "Yumbe");
-            GEOIP_REGION_NAME.Add("UG", cc_reg_UG);
+            geoIPRegionName.Add("UG", cc_reg_UG);
             Dictionary<string, string> cc_reg_US = new Dictionary<string, string>();
             cc_reg_US.Add("AA", "Armed Forces Americas");
             cc_reg_US.Add("AE", "Armed Forces Europe, Middle East, & Canada");
@@ -4461,7 +4461,7 @@ namespace MaxMind.GeoIP
             cc_reg_US.Add("WI", "Wisconsin");
             cc_reg_US.Add("WV", "West Virginia");
             cc_reg_US.Add("WY", "Wyoming");
-            GEOIP_REGION_NAME.Add("US", cc_reg_US);
+            geoIPRegionName.Add("US", cc_reg_US);
             Dictionary<string, string> cc_reg_UY = new Dictionary<string, string>();
             cc_reg_UY.Add("01", "Artigas");
             cc_reg_UY.Add("02", "Canelones");
@@ -4482,7 +4482,7 @@ namespace MaxMind.GeoIP
             cc_reg_UY.Add("17", "Soriano");
             cc_reg_UY.Add("18", "Tacuarembo");
             cc_reg_UY.Add("19", "Treinta y Tres");
-            GEOIP_REGION_NAME.Add("UY", cc_reg_UY);
+            geoIPRegionName.Add("UY", cc_reg_UY);
             Dictionary<string, string> cc_reg_UZ = new Dictionary<string, string>();
             cc_reg_UZ.Add("01", "Andijon");
             cc_reg_UZ.Add("02", "Bukhoro");
@@ -4498,7 +4498,7 @@ namespace MaxMind.GeoIP
             cc_reg_UZ.Add("12", "Surkhondaryo");
             cc_reg_UZ.Add("13", "Toshkent");
             cc_reg_UZ.Add("14", "Toshkent");
-            GEOIP_REGION_NAME.Add("UZ", cc_reg_UZ);
+            geoIPRegionName.Add("UZ", cc_reg_UZ);
             Dictionary<string, string> cc_reg_VC = new Dictionary<string, string>();
             cc_reg_VC.Add("01", "Charlotte");
             cc_reg_VC.Add("02", "Saint Andrew");
@@ -4506,7 +4506,7 @@ namespace MaxMind.GeoIP
             cc_reg_VC.Add("04", "Saint George");
             cc_reg_VC.Add("05", "Saint Patrick");
             cc_reg_VC.Add("06", "Grenadines");
-            GEOIP_REGION_NAME.Add("VC", cc_reg_VC);
+            geoIPRegionName.Add("VC", cc_reg_VC);
             Dictionary<string, string> cc_reg_VE = new Dictionary<string, string>();
             cc_reg_VE.Add("01", "Amazonas");
             cc_reg_VE.Add("02", "Anzoategui");
@@ -4533,7 +4533,7 @@ namespace MaxMind.GeoIP
             cc_reg_VE.Add("24", "Dependencias Federales");
             cc_reg_VE.Add("25", "Distrito Federal");
             cc_reg_VE.Add("26", "Vargas");
-            GEOIP_REGION_NAME.Add("VE", cc_reg_VE);
+            geoIPRegionName.Add("VE", cc_reg_VE);
             Dictionary<string, string> cc_reg_VN = new Dictionary<string, string>();
             cc_reg_VN.Add("01", "An Giang");
             cc_reg_VN.Add("02", "Bac Thai");
@@ -4623,7 +4623,7 @@ namespace MaxMind.GeoIP
             cc_reg_VN.Add("91", "Dak Nong");
             cc_reg_VN.Add("92", "Dien Bien");
             cc_reg_VN.Add("93", "Hau Giang");
-            GEOIP_REGION_NAME.Add("VN", cc_reg_VN);
+            geoIPRegionName.Add("VN", cc_reg_VN);
             Dictionary<string, string> cc_reg_VU = new Dictionary<string, string>();
             cc_reg_VU.Add("05", "Ambrym");
             cc_reg_VU.Add("06", "Aoba");
@@ -4639,7 +4639,7 @@ namespace MaxMind.GeoIP
             cc_reg_VU.Add("16", "Malampa");
             cc_reg_VU.Add("17", "Penama");
             cc_reg_VU.Add("18", "Shefa");
-            GEOIP_REGION_NAME.Add("VU", cc_reg_VU);
+            geoIPRegionName.Add("VU", cc_reg_VU);
             Dictionary<string, string> cc_reg_WS = new Dictionary<string, string>();
             cc_reg_WS.Add("02", "Aiga-i-le-Tai");
             cc_reg_WS.Add("03", "Atua");
@@ -4651,7 +4651,7 @@ namespace MaxMind.GeoIP
             cc_reg_WS.Add("09", "Satupa");
             cc_reg_WS.Add("10", "Tuamasaga");
             cc_reg_WS.Add("11", "Vaisigano");
-            GEOIP_REGION_NAME.Add("WS", cc_reg_WS);
+            geoIPRegionName.Add("WS", cc_reg_WS);
             Dictionary<string, string> cc_reg_YE = new Dictionary<string, string>();
             cc_reg_YE.Add("01", "Abyan");
             cc_reg_YE.Add("02", "Adan");
@@ -4671,7 +4671,7 @@ namespace MaxMind.GeoIP
             cc_reg_YE.Add("23", "Ibb");
             cc_reg_YE.Add("24", "Lahij");
             cc_reg_YE.Add("25", "Ta");
-            GEOIP_REGION_NAME.Add("YE", cc_reg_YE);
+            geoIPRegionName.Add("YE", cc_reg_YE);
             Dictionary<string, string> cc_reg_ZA = new Dictionary<string, string>();
             cc_reg_ZA.Add("01", "North-Western Province");
             cc_reg_ZA.Add("02", "KwaZulu-Natal");
@@ -4683,7 +4683,7 @@ namespace MaxMind.GeoIP
             cc_reg_ZA.Add("09", "Limpopo");
             cc_reg_ZA.Add("10", "North-West");
             cc_reg_ZA.Add("11", "Western Cape");
-            GEOIP_REGION_NAME.Add("ZA", cc_reg_ZA);
+            geoIPRegionName.Add("ZA", cc_reg_ZA);
             Dictionary<string, string> cc_reg_ZM = new Dictionary<string, string>();
             cc_reg_ZM.Add("01", "Western");
             cc_reg_ZM.Add("02", "Central");
@@ -4694,7 +4694,7 @@ namespace MaxMind.GeoIP
             cc_reg_ZM.Add("07", "Southern");
             cc_reg_ZM.Add("08", "Copperbelt");
             cc_reg_ZM.Add("09", "Lusaka");
-            GEOIP_REGION_NAME.Add("ZM", cc_reg_ZM);
+            geoIPRegionName.Add("ZM", cc_reg_ZM);
             Dictionary<string, string> cc_reg_ZW = new Dictionary<string, string>();
             cc_reg_ZW.Add("01", "Manicaland");
             cc_reg_ZW.Add("02", "Midlands");
@@ -4706,7 +4706,7 @@ namespace MaxMind.GeoIP
             cc_reg_ZW.Add("08", "Masvingo");
             cc_reg_ZW.Add("09", "Bulawayo");
             cc_reg_ZW.Add("10", "Harare");
-            GEOIP_REGION_NAME.Add("ZW", cc_reg_ZW);
+            geoIPRegionName.Add("ZW", cc_reg_ZW);
         }
     }
 }

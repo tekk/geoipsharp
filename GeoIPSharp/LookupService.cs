@@ -761,6 +761,7 @@ namespace MaxMind.GeoIP
 
         public void Dispose()
         {
+            GC.SuppressFinalize(this);
             if (this.file != null)
             {
                 this.file.Dispose();
