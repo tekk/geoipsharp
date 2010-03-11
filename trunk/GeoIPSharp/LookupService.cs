@@ -34,11 +34,8 @@ namespace MaxMind.GeoIP
         int dboptions;
         byte[] dbbuffer;
 
-        string licenseKey;
-        int dnsService = 0;
         private static Country UNKNOWN_COUNTRY = new Country("--", "N/A");
         private static int COUNTRY_BEGIN = 16776960;
-        private static int STATE_BEGIN = 16700000;
         private static int STRUCTURE_INFO_MAX_SIZE = 20;
         private static int DATABASE_INFO_MAX_SIZE = 100;
         private static int FULL_RECORD_LENGTH = 100;//???
