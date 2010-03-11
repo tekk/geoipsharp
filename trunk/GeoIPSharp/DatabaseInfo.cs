@@ -38,10 +38,10 @@ namespace MaxMind.GeoIP
 
         private string info;
 
-       /// <summary>
+        /// <summary>
         /// Creates a new DatabaseInfo objectfor the given database info String
-       /// </summary>
-       /// <param name="info"></param>
+        /// </summary>
+        /// <param name="info"></param>
         public DatabaseInfo(string info)
         {
             this.info = info;

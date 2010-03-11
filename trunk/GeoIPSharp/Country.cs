@@ -33,7 +33,7 @@ namespace MaxMind.GeoIP
         /// Gets the name of this country.
         /// </summary>
         public string Name { get; private set; }
-       
+
         /// <summary>
         /// Creates a new Country.
         /// </summary>
