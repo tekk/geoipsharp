@@ -23,31 +23,42 @@ namespace MaxMind.GeoIP
     using System.Collections;
     using System.Collections.Generic;
 
-    public static class RegionName
+    /// <summary>
+    /// Provides a single method to retrieve regionCode names.
+    /// </summary>
+    public sealed class RegionName
     {
-
         private static Dictionary<string, Dictionary<string, string>> GEOIP_REGION_NAME;
 
-        public static string GetRegionName(string ccode, string region)
+        /// <summary>
+        /// Gets the Region name for a given country and Region code
+        /// </summary>
+        /// <param name="CountryCode">The country code</param>
+        /// <param name="regionCode">The Region code</param>
+        /// <returns>The Region name or null</returns>
+        public static string GetRegionName(string countryCode, string regionCode)
         {
             if (GEOIP_REGION_NAME == null)
             {
                 InitRegionNames();
             }
 
-            if (region == null || region == "00")
+            if (regionCode == null || regionCode == "00")
             {
                 return null;
             }
 
-            if (!GEOIP_REGION_NAME.ContainsKey(ccode))
+            if (!GEOIP_REGION_NAME.ContainsKey(countryCode))
             {
                 return null;
             }
 
-            return GEOIP_REGION_NAME[ccode][region];
+            return GEOIP_REGION_NAME[countryCode][regionCode];
         }
 
+        /// <summary>
+        /// Initialises the Country/Region Names lookup table
+        /// </summary>
         private static void InitRegionNames()
         {
 

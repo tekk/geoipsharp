@@ -25,7 +25,6 @@ namespace MaxMind.GeoIP
 
     public class DatabaseInfo
     {
-
         public static int COUNTRY_EDITION = 1;
         public static int REGION_EDITION_REV0 = 7;
         public static int REGION_EDITION_REV1 = 3;
@@ -37,22 +36,25 @@ namespace MaxMind.GeoIP
         public static int ASNUM_EDITION = 9;
         public static int NETSPEED_EDITION = 10;
 
-        //private static SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
-
         private string info;
 
-        /**
-          * Creates a new DatabaseInfo object given the database info String.
-          * @param info
-          */
+       /// <summary>
+        /// Creates a new DatabaseInfo objectfor the given database info String
+       /// </summary>
+       /// <param name="info"></param>
         public DatabaseInfo(string info)
         {
             this.info = info;
         }
 
-        public int GetTypeCode()
+        public int DatabaseType
         {
-            if ((info == null) | (info == ""))
+            get { return GetDatabaseType(); }
+        }
+
+        private int GetDatabaseType()
+        {
+            if ((info == null) | (info == string.Empty))
             {
                 return COUNTRY_EDITION;
             }
@@ -65,22 +67,26 @@ namespace MaxMind.GeoIP
             }
         }
 
-        /**
-         * Returns true if the database is the premium version.
-         *
-         * @return true if the premium version of the database.
-         */
-        public bool IsPremium()
+        /// <summary>
+        /// Returns true if the database is the premium version
+        /// </summary>
+        public bool IsPremium
         {
-            return info.IndexOf("FREE") < 0;
+            get
+            {
+                return info.IndexOf("FREE") < 0;
+            }
         }
 
-        /**
-         * Returns the date of the database.
-         *
-         * @return the date of the database.
-         */
-        public DateTime GetDate()
+        /// <summary>
+        /// The date of the database file
+        /// </summary>
+        public DateTime Date
+        {
+            get { return GetDate(); }
+        }
+
+        private DateTime GetDate()
         {
             for (int i = 0; i < info.Length - 9; i++)
             {
@@ -89,9 +95,7 @@ namespace MaxMind.GeoIP
                     string dateString = info.Substring(i + 1, i + 9);
                     try
                     {
-                        //synchronized (formatter) {
                         return DateTime.ParseExact(dateString, "yyyyMMdd", null);
-                        //}
                     }
                     catch (Exception e)
                     {
@@ -103,7 +107,7 @@ namespace MaxMind.GeoIP
             return DateTime.Now;
         }
 
-        public string toString()
+        public override string ToString()
         {
             return info;
         }
