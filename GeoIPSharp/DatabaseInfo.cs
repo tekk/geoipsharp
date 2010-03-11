@@ -21,7 +21,6 @@ namespace MaxMind.GeoIP
 {
 
     using System;
-    using System.IO;
 
     public class DatabaseInfo
     {
