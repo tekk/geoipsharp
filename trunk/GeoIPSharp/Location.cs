@@ -21,7 +21,6 @@ namespace MaxMind.GeoIP
 {
 
     using System;
-    using System.IO;
 
     /// <summary>
     /// Represents a specific location on the Earths surface
