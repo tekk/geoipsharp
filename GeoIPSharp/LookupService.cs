@@ -28,11 +28,11 @@ namespace MaxMind.GeoIP
     {
         private FileStream file = null;
         private DatabaseInfo databaseInfo = null;
-        byte databaseType = Convert.ToByte(DatabaseInfo.COUNTRY_EDITION);
-        int[] databaseSegments;
-        int recordLength;
-        int dboptions;
-        byte[] dbbuffer;
+        private byte databaseType = Convert.ToByte(DatabaseInfo.COUNTRY_EDITION);
+        private int[] databaseSegments;
+        private int recordLength;
+        private int dboptions;
+        private byte[] dbbuffer;
 
         private static Country UNKNOWN_COUNTRY = new Country("--", "N/A");
         private static int COUNTRY_BEGIN = 16776960;
