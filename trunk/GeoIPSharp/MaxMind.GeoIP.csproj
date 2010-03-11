@@ -12,6 +12,8 @@
     <AssemblyName>MaxMind.GeoIP</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>GeoIPSharp.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,7 +55,11 @@
     <Compile Include="Region.cs" />
     <Compile Include="RegionName.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="GeoIPSharp.pfx" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -61,4 +67,33 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <!--<Target Name="BeforeBuild">
+    <SvnVersion ToolPath="$(ProgramFiles)\VisualSVN\bin"
+                LocalPath="$(MSBuildProjectDirectory)">
+      <Output PropertyName="Revision"
+              TaskParameter="Revision" />
+    </SvnVersion>
+    
+    <AssemblyInfo CodeLanguage="CS"
+                  OutputFile="$(MSBuildProjectDirectory)\Properties\AssemblyInfo.cs"
+                  AssemblyTitle="GeoIPSharp"
+                  AssemblyDescription="GeoIPSharp"
+                  AssemblyConfiguration=""
+                  AssemblyCompany="GeoIPSharp"
+                  AssemblyProduct="GeoIPSharp"
+                  AssemblyCopyright="Copyright © 2010 the GeoIPSharp team"
+                  AssemblyTrademark=""
+                  ComVisible="false"
+                  CLSCompliant="true"
+                  Guid="a98316f5-ac36-4acb-86e2-b439054acf82"
+                  AssemblyVersion="1.0.0.0"
+                  AssemblyFileVersion="1.0.0.$(Revision)" />
+
+
+
+  </Target>-->
+  <PropertyGroup>
+    <PostBuildEvent>"$(FrameworkSDKDir)Bin\gacutil.exe" /i $(TargetFileName)</PostBuildEvent>
+    <PreBuildEvent>"$(FrameworkSDKDir)Bin\gacutil.exe" /u $(TargetFileName)</PreBuildEvent>
+  </PropertyGroup>
 </Project>

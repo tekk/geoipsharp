@@ -23,18 +23,37 @@ namespace MaxMind.GeoIP
     using System.IO;
 
     /// <summary>
-    /// 
+    /// Represents a region of a country
     /// </summary>
     public class Region
     {
+        /// <summary>
+        /// The containing country
+        /// </summary>
         public string CountryCode { get; internal set; }
+
+        /// <summary>
+        /// The name of the containing country
+        /// </summary>
         public string CountryName { get; internal set; }
+
+        /// <summary>
+        /// The name of the region
+        /// </summary>
         public string Name { get; internal set; }
 
-        public Region()
-        {
-        }
+        /// <summary>
+        /// Creates a new empty region
+        /// </summary>
+        public Region() { }
 
+        /// <summary>
+        /// Creates a new empty region specifying the country code, 
+        /// country name and region name
+        /// </summary>
+        /// <param name="countryCode"></param>
+        /// <param name="countryName"></param>
+        /// <param name="name"></param>
         public Region(string countryCode, string countryName, string name)
         {
             this.CountryCode = countryCode;

@@ -25,16 +25,16 @@ namespace MaxMind.GeoIP
 
     public class DatabaseInfo
     {
-        public static int COUNTRY_EDITION = 1;
-        public static int REGION_EDITION_REV0 = 7;
-        public static int REGION_EDITION_REV1 = 3;
-        public static int CITY_EDITION_REV0 = 6;
-        public static int CITY_EDITION_REV1 = 2;
-        public static int ORG_EDITION = 5;
-        public static int ISP_EDITION = 4;
-        public static int PROXY_EDITION = 8;
-        public static int ASNUM_EDITION = 9;
-        public static int NETSPEED_EDITION = 10;
+        public const int COUNTRY_EDITION = 1;
+        public const int REGION_EDITION_REV0 = 7;
+        public const int REGION_EDITION_REV1 = 3;
+        public const int CITY_EDITION_REV0 = 6;
+        public const int CITY_EDITION_REV1 = 2;
+        public const int ORG_EDITION = 5;
+        public const int ISP_EDITION = 4;
+        public const int PROXY_EDITION = 8;
+        public const int ASNUM_EDITION = 9;
+        public const int NETSPEED_EDITION = 10;
 
         private string info;
 
