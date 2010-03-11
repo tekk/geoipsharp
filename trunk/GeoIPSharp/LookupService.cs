@@ -758,10 +758,18 @@ namespace MaxMind.GeoIP
 
         public void Dispose()
         {
+            Dispose(true);
             GC.SuppressFinalize(this);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (!disposing) return;
+
             if (this.file != null)
             {
                 this.file.Dispose();
+                this.file = null;
             }
         }
 
