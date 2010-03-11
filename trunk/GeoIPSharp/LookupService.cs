@@ -19,13 +19,12 @@
  */
 namespace MaxMind.GeoIP
 {
-
     using System;
     using System.IO;
     using System.Net;
     using System.Runtime.CompilerServices;
 
-    public class LookupService
+    public class LookupService:IDisposable
     {
         private FileStream file = null;
         private DatabaseInfo databaseInfo = null;
@@ -286,7 +285,7 @@ namespace MaxMind.GeoIP
                 }
                 else
                 {
-                    return new Country(l.countryCode, l.countryName);
+                    return new Country(l.CountryCode, l.CountryName);
                 }
             }
             else
@@ -532,8 +531,8 @@ namespace MaxMind.GeoIP
                     record_buf2[a0] = Convert.ToChar(record_buf[a0]);
                 }
                 // get country
-                record.countryCode = countryCode[UnsignedByteToInt(record_buf[0])];
-                record.countryName = countryName[UnsignedByteToInt(record_buf[0])];
+                record.CountryCode = countryCode[UnsignedByteToInt(record_buf[0])];
+                record.CountryName = countryName[UnsignedByteToInt(record_buf[0])];
                 record_buf_offset++;
 
                 // get name
@@ -541,20 +540,20 @@ namespace MaxMind.GeoIP
                     str_length++;
                 if (str_length > 0)
                 {
-                    record.region = new String(record_buf2, record_buf_offset, str_length);
+                    record.Region = new String(record_buf2, record_buf_offset, str_length);
                 }
                 record_buf_offset += str_length + 1;
                 str_length = 0;
 
                 // get region_name
-                record.regionName = RegionName.GetRegionName(record.countryCode, record.region);
+                record.RegionName = RegionName.GetRegionName(record.CountryCode, record.Region);
 
-                // get city
+                // get City
                 while (record_buf[record_buf_offset + str_length] != '\0')
                     str_length++;
                 if (str_length > 0)
                 {
-                    record.city = new String(record_buf2, record_buf_offset, str_length);
+                    record.City = new String(record_buf2, record_buf_offset, str_length);
                 }
                 record_buf_offset += (str_length + 1);
                 str_length = 0;
@@ -564,34 +563,34 @@ namespace MaxMind.GeoIP
                     str_length++;
                 if (str_length > 0)
                 {
-                    record.postalCode = new String(record_buf2, record_buf_offset, str_length);
+                    record.PostalCode = new String(record_buf2, record_buf_offset, str_length);
                 }
                 record_buf_offset += (str_length + 1);
 
-                // get latitude
+                // get Latitude
                 for (j = 0; j < 3; j++)
                     latitude += (UnsignedByteToInt(record_buf[record_buf_offset + j]) << (j * 8));
-                record.latitude = (float)latitude / 10000 - 180;
+                record.Latitude = (float)latitude / 10000 - 180;
                 record_buf_offset += 3;
 
-                // get longitude
+                // get Longitude
                 for (j = 0; j < 3; j++)
                     longitude += (UnsignedByteToInt(record_buf[record_buf_offset + j]) << (j * 8));
-                record.longitude = (float)longitude / 10000 - 180;
+                record.Longitude = (float)longitude / 10000 - 180;
 
-                record.metro_code = record.dma_code = 0;
-                record.area_code = 0;
+                record.MetroCode = record.DmaCode = 0;
+                record.AreaCode = 0;
                 if (databaseType == DatabaseInfo.CITY_EDITION_REV1)
                 {
-                    // get metro_code
+                    // get MetroCode
                     int metroarea_combo = 0;
-                    if (record.countryCode == "US")
+                    if (record.CountryCode == "US")
                     {
                         record_buf_offset += 3;
                         for (j = 0; j < 3; j++)
                             metroarea_combo += (UnsignedByteToInt(record_buf[record_buf_offset + j]) << (j * 8));
-                        record.metro_code = record.dma_code = metroarea_combo / 1000;
-                        record.area_code = metroarea_combo % 1000;
+                        record.MetroCode = record.DmaCode = metroarea_combo / 1000;
+                        record.AreaCode = metroarea_combo % 1000;
                     }
                 }
             }
@@ -757,5 +756,17 @@ namespace MaxMind.GeoIP
         {
             return (int)b & 0xFF;
         }
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            if (this.file != null)
+            {
+                this.file.Dispose();
+            }
+        }
+
+        #endregion
     }
 }

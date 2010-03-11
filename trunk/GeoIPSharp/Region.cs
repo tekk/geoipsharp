@@ -22,6 +22,9 @@ namespace MaxMind.GeoIP
     using System;
     using System.IO;
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class Region
     {
         public string CountryCode { get; internal set; }

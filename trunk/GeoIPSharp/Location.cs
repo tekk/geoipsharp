@@ -23,19 +23,22 @@ namespace MaxMind.GeoIP
     using System;
     using System.IO;
 
+    /// <summary>
+    /// Represents a specific location on the Earths surface
+    /// </summary>
     public class Location
     {
-        public string countryCode;
-        public string countryName;
-        public string region;
-        public string city;
-        public string postalCode;
-        public double latitude;
-        public double longitude;
-        public int dma_code;
-        public int area_code;
-        public string regionName;
-        public int metro_code;
+        public string CountryCode { get; set; }
+        public string CountryName { get; set; }
+        public string Region { get; set; }
+        public string City { get; set; }
+        public string PostalCode { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public int DmaCode { get; set; }
+        public int AreaCode { get; set; }
+        public string RegionName { get; set; }
+        public int MetroCode { get; set; }
 
         private static double EARTH_DIAMETER = 2 * 6378.2;
         private static double PI = 3.14159265;
@@ -46,10 +49,10 @@ namespace MaxMind.GeoIP
             double delta_lat, delta_lon;
             double temp;
 
-            double lat1 = latitude;
-            double lon1 = longitude;
-            double lat2 = loc.latitude;
-            double lon2 = loc.longitude;
+            double lat1 = Latitude;
+            double lon1 = Longitude;
+            double lat2 = loc.Latitude;
+            double lon2 = loc.Longitude;
 
             // convert degrees to radians
             lat1 *= RAD_CONVERT;

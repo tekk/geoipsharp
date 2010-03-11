@@ -24,45 +24,25 @@ namespace MaxMind.GeoIP
 
     public class Country
     {
+        /// <summary>
+        /// Gets the ISO two-letter country code of this country.
+        /// </summary>
+        public string Code { get; private set; }
 
-        private string code;
-        private string name;
-
-        /**
-         * Creates a new Country.
-         *
-         * @param code the country code.
-         * @param name the country name.
-         */
+        /// <summary>
+        /// Gets the name of this country.
+        /// </summary>
+        public string Name { get; private set; }
+       
+        /// <summary>
+        /// Creates a new Country.
+        /// </summary>
+        /// <param name="code">The country code</param>
+        /// <param name="name">The country name</param>
         public Country(string code, string name)
         {
-            this.code = code;
-            this.name = name;
-        }
-        /**
-          * Returns the ISO two-letter country code of this country.
-          *
-          * @return the country code.
-          */
-        public string Code
-        {
-            get
-            {
-                return code;
-            }
-        }
-
-        /**
-         * Returns the name of this country.
-         *
-         * @return the country name.
-         */
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
+            Code = code;
+            Name = name;
         }
 
         public override string ToString()
