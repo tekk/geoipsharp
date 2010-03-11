@@ -24,7 +24,7 @@ namespace MaxMind.GeoIP
     using System.Net;
     using System.Runtime.CompilerServices;
 
-    public class LookupService:IDisposable
+    public class LookupService : IDisposable
     {
         private FileStream file = null;
         private DatabaseInfo databaseInfo = null;
