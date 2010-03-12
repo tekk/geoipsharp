@@ -19,8 +19,9 @@
  */
 namespace MaxMind.GeoIP
 {
+    using System;
 
-    public class Country
+    public class Country : IEquatable<Country>
     {
         /// <summary>
         /// Gets the ISO two-letter country code of this country.
@@ -46,6 +47,37 @@ namespace MaxMind.GeoIP
         public override string ToString()
         {
             return string.Format("{0} {1}", Code, Name);
+        }
+
+        #region IEquatable<Country> Members
+
+        public bool Equals(Country other)
+        {
+            return this.Code == other.Code && this.Name == other.Name;
+        }
+
+        #endregion
+
+        public override bool Equals(object obj)
+        {
+            Country other = obj as Country;
+            if (other == null) return false;
+            return Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Code.GetHashCode() ^ this.Name.GetHashCode();
+        }
+
+        public static bool operator ==(Country a, Country b)
+        {
+            return a.Equals(b);
+        }
+
+        public static bool operator !=(Country a, Country b)
+        {
+            return !a.Equals(b);
         }
     }
 }
