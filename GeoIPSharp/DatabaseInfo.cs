@@ -53,7 +53,7 @@ namespace MaxMind.GeoIP
 
         private int GetDatabaseType()
         {
-            if ((info == null) | (info == string.Empty))
+            if (string.IsNullOrEmpty(info))
             {
                 return COUNTRY_EDITION;
             }

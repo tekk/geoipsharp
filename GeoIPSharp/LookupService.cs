@@ -50,12 +50,12 @@ namespace MaxMind.GeoIP
         private static int US_OFFSET = 1;
         private static int CANADA_OFFSET = 677;
         private static int WORLD_OFFSET = 1353;
-        public static int GEOIP_STANDARD = 0;
-        public static int GEOIP_MEMORY_CACHE = 1;
-        public static int GEOIP_UNKNOWN_SPEED = 0;
-        public static int GEOIP_DIALUP_SPEED = 1;
-        public static int GEOIP_CABLEDSL_SPEED = 2;
-        public static int GEOIP_CORPORATE_SPEED = 3;
+        public const int GEOIP_STANDARD = 0;
+        public const int GEOIP_MEMORY_CACHE = 1;
+        public const int GEOIP_UNKNOWN_SPEED = 0;
+        public const int GEOIP_DIALUP_SPEED = 1;
+        public const int GEOIP_CABLEDSL_SPEED = 2;
+        public const int GEOIP_CORPORATE_SPEED = 3;
 
         private static string[] countryCode = {
         "--","AP","EU","AD","AE","AF","AG","AI","AL","AM","AN","AO","AQ","AR",
@@ -140,9 +140,10 @@ namespace MaxMind.GeoIP
                 dboptions = options;
                 Init();
             }
-            catch (SystemException)
+            catch (IOException)
             {
                 Console.Write("cannot open file " + databaseFile + "\n");
+                throw;
             }
         }
 
@@ -299,7 +300,7 @@ namespace MaxMind.GeoIP
             }
         }
 
-        public int GetID(String ipAddress)
+        public int GetId(String ipAddress)
         {
             IPAddress addr;
             try
@@ -311,16 +312,16 @@ namespace MaxMind.GeoIP
                 Console.Write(e.Message);
                 return 0;
             }
-            return GetID(BytesToLong(addr.GetAddressBytes()));
+            return GetId(BytesToLong(addr.GetAddressBytes()));
         }
 
-        public int GetID(IPAddress ipAddress)
+        public int GetId(IPAddress ipAddress)
         {
 
-            return GetID(BytesToLong(ipAddress.GetAddressBytes()));
+            return GetId(BytesToLong(ipAddress.GetAddressBytes()));
         }
 
-        public int GetID(long ipAddress)
+        public int GetId(long ipAddress)
         {
             if (file == null)
             {
