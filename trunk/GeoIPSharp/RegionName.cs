@@ -59,7 +59,6 @@ namespace MaxMind.GeoIP
         /// </summary>
         private static void InitRegionNames()
         {
-
             geoIPRegionName = new Dictionary<string, Dictionary<string, string>>();
             Dictionary<string, string> cc_reg_AD = new Dictionary<string, string>();
             cc_reg_AD.Add("02", "Canillo");
