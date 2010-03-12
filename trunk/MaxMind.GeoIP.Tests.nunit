@@ -1,0 +1,12 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Default" />
+  <Config name="Default" binpathtype="Auto">
+    <assembly path="MaxMind.GeoIP.Tests\bin\Debug\MaxMind.GeoIP.Tests.dll" />
+  </Config>
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="MaxMind.GeoIP.Tests\bin\Debug\MaxMind.GeoIP.Tests.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="MaxMind.GeoIP.Tests\bin\Release\MaxMind.GeoIP.Tests.dll" />
+  </Config>
+</NUnitProject>
