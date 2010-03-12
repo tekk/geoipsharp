@@ -26,8 +26,8 @@ namespace MaxMind.GeoIP
 
     public class LookupService : IDisposable
     {
-        private FileStream file = null;
-        private DatabaseInfo databaseInfo = null;
+        private FileStream file;
+        private DatabaseInfo databaseInfo;
         private byte databaseType = Convert.ToByte(DatabaseInfo.COUNTRY_EDITION);
         private int[] databaseSegments;
         private int recordLength;
@@ -56,6 +56,8 @@ namespace MaxMind.GeoIP
         public const int GEOIP_DIALUP_SPEED = 1;
         public const int GEOIP_CABLEDSL_SPEED = 2;
         public const int GEOIP_CORPORATE_SPEED = 3;
+
+        #region Array Initialisation
 
         private static string[] countryCode = {
         "--","AP","EU","AD","AE","AF","AG","AI","AL","AM","AN","AO","AQ","AR",
@@ -131,6 +133,8 @@ namespace MaxMind.GeoIP
             "Satellite Provider","Other",
 	    "Aland Islands","Guernsey","Isle of Man","Jersey","Saint Barthelemy",
 	    "Saint Martin"};
+
+        #endregion
 
         public LookupService(string databaseFile, int options)
         {
@@ -763,7 +767,7 @@ namespace MaxMind.GeoIP
             GC.SuppressFinalize(this);
         }
 
-        public virtual void Dispose(bool disposing)
+        protected virtual void Dispose(bool disposing)
         {
             if (!disposing) return;
 
