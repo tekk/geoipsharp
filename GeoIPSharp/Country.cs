@@ -36,8 +36,8 @@ namespace MaxMind.GeoIP
         /// <summary>
         /// Creates a new Country.
         /// </summary>
-        /// <param name="code">The country code</param>
-        /// <param name="name">The country name</param>
+        /// <param name="code">The country code.</param>
+        /// <param name="name">The country name.</param>
         public Country(string code, string name)
         {
             Code = code;

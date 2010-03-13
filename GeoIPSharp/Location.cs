@@ -23,9 +23,9 @@ namespace MaxMind.GeoIP
     using System;
 
     /// <summary>
-    /// Represents a specific location on the Earths surface
+    /// Represents a specific location on the Earths surface.
     /// </summary>
-    public class Location
+    public class Location : IEquatable<Location>
     {
         public string CountryCode { get; set; }
         public string CountryName { get; set; }
@@ -64,6 +64,37 @@ namespace MaxMind.GeoIP
             // Find the great circle Distance
             temp = Math.Pow(Math.Sin(delta_lat / 2), 2) + Math.Cos(lat1) * Math.Cos(lat2) * Math.Pow(Math.Sin(delta_lon / 2), 2);
             return EARTH_DIAMETER * Math.Atan2(Math.Sqrt(temp), Math.Sqrt(1 - temp));
+        }
+
+        #region IEquatable<Location> Members
+
+        public bool Equals(Location other)
+        {
+            return this.Latitude == other.Latitude && this.Longitude == other.Longitude;
+        }
+
+        #endregion
+
+        public override bool Equals(object obj)
+        {
+            Location other = obj as Location;
+            if (other == null) return false;
+            return Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Latitude.GetHashCode() ^ this.Latitude.GetHashCode();
+        }
+
+        public static bool operator ==(Location a, Location b)
+        {
+            return a.Equals(b);
+        }
+
+        public static bool operator !=(Location a, Location b)
+        {
+            return !a.Equals(b);
         }
     }
 }
