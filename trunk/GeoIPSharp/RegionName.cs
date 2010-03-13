@@ -22,18 +22,18 @@ namespace MaxMind.GeoIP
     using System.Collections.Generic;
 
     /// <summary>
-    /// Provides a single method to retrieve regionCode names.
+    /// Provides a single method to retrieve RegionCode names.
     /// </summary>
     public sealed class RegionName
     {
         private static Dictionary<string, Dictionary<string, string>> geoIPRegionName;
 
         /// <summary>
-        /// Gets the Region name for a given country and Region code
+        /// Gets the Region name for a given country and Region code.
         /// </summary>
-        /// <param name="CountryCode">The country code</param>
-        /// <param name="regionCode">The Region code</param>
-        /// <returns>The Region name or null</returns>
+        /// <param name="CountryCode">The country code.</param>
+        /// <param name="regionCode">The Region code.</param>
+        /// <returns>Returns the Region name or null.</returns>
         public static string GetRegionName(string countryCode, string regionCode)
         {
             if (geoIPRegionName == null)
@@ -55,7 +55,7 @@ namespace MaxMind.GeoIP
         }
 
         /// <summary>
-        /// Initialises the Country/Region Names lookup table
+        /// Initialises the Country/Region Names lookup table.
         /// </summary>
         private static void InitRegionNames()
         {
