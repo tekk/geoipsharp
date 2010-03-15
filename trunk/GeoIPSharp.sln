@@ -5,6 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxMind.GeoIP", "GeoIPSharp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxMind.GeoIP.Tests", "MaxMind.GeoIP.Tests\MaxMind.GeoIP.Tests.csproj", "{9AE56B56-FA39-40F1-9F26-8EA65FB89795}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Data", "Test Data", "{51478D27-A80A-43DC-ABBE-5D173687AA47}"
+	ProjectSection(SolutionItems) = preProject
+		Test Data\GeoIP.dat = Test Data\GeoIP.dat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
