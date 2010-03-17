@@ -604,17 +604,27 @@ namespace MaxMind.GeoIP
             return record;
         }
 
-        public string GetOrg(IPAddress addr)
+        /// <summary>
+        /// Gets the name of the organisation whom the IP address is registered to.
+        /// </summary>
+        /// <param name="addr">The IP Address to identify.</param>
+        /// <returns>Returns the name of the owning organisation.</returns>
+        public string GetOrganisation(IPAddress address)
         {
-            return GetOrg(BytesToLong(addr.GetAddressBytes()));
+            return GetOrganisation(BytesToLong(address.GetAddressBytes()));
         }
 
-        public string GetOrg(String str)
+        /// <summary>
+        /// Gets the name of the organisation whom the IP address is registered to.
+        /// </summary>
+        /// <param name="addr">The IP Address to identify.</param>
+        /// <returns>Returns the name of the owning organisation.</returns>
+        public string GetOrganisation(String address)
         {
             IPAddress addr;
             try
             {
-                addr = IPAddress.Parse(str);
+                addr = IPAddress.Parse(address);
             }
             //catch (UnknownHostException e) {
             catch (Exception e)
@@ -622,11 +632,16 @@ namespace MaxMind.GeoIP
                 Console.Write(e.Message);
                 return null;
             }
-            return GetOrg(BytesToLong(addr.GetAddressBytes()));
+            return GetOrganisation(BytesToLong(addr.GetAddressBytes()));
         }
 
+        /// <summary>
+        /// Gets the name of the organisation whom the IP address is registered to.
+        /// </summary>
+        /// <param name="ipnum">The IP Address to identify.</param>
+        /// <returns>Returns the name of the owning organisation.</returns>
         [MethodImpl(MethodImplOptions.Synchronized)]
-        public string GetOrg(long ipnum)
+        public string GetOrganisation(long ipnum)
         {
             int Seek_org;
             int record_pointer;
