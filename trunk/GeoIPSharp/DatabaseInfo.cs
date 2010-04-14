@@ -20,7 +20,6 @@
  */
 namespace MaxMind.GeoIP
 {
-
     using System;
 
     public class DatabaseInfo
@@ -39,7 +38,7 @@ namespace MaxMind.GeoIP
         private string info;
 
         /// <summary>
-        /// Creates a new DatabaseInfo objectfor the given database info String
+        /// Initializes a new instance of MaxMind.GeoIP.DatabaseInfo class.
         /// </summary>
         /// <param name="info"></param>
         public DatabaseInfo(string info)
@@ -49,50 +48,40 @@ namespace MaxMind.GeoIP
 
         public int DatabaseType
         {
-            get { return GetDatabaseType(); }
-        }
-
-        private int GetDatabaseType()
-        {
-            if (string.IsNullOrEmpty(info))
-            {
-                return COUNTRY_EDITION;
-            }
-            else
-            {
-                // Get the type code from the database info string and then
-                // subtract 105 from the value to preserve compatability with
-                // databases from April 2003 and earlier.
-                return Convert.ToInt32(info.Substring(4, 7)) - 105;
-            }
+            get { return this.GetDatabaseType(); }
         }
 
         /// <summary>
-        /// Returns true if the database is the premium version
+        /// Gets a value indicating whether the database is the premium version.
         /// </summary>
         public bool IsPremium
         {
             get
             {
-                return info.IndexOf("FREE") < 0;
+                return this.info.IndexOf("FREE") < 0;
             }
         }
 
         /// <summary>
-        /// The date of the database file
+        /// Gets the date of the database file.
         /// </summary>
         public DateTime Date
         {
-            get { return GetDate(); }
+            get { return this.GetDate(); }
+        }
+
+        public override string ToString()
+        {
+            return this.info;
         }
 
         private DateTime GetDate()
         {
-            for (int i = 0; i < info.Length - 9; i++)
+            for (int i = 0; i < this.info.Length - 9; i++)
             {
-                if (Char.IsWhiteSpace(info[i]) == true)
+                if (Char.IsWhiteSpace(this.info[i]) == true)
                 {
-                    string dateString = info.Substring(i + 1, i + 9);
+                    string dateString = this.info.Substring(i + 1, i + 9);
                     try
                     {
                         return DateTime.ParseExact(dateString, "yyyyMMdd", null);
@@ -101,15 +90,27 @@ namespace MaxMind.GeoIP
                     {
                         Console.Write(e.Message);
                     }
+
                     break;
                 }
             }
+
             return DateTime.Now;
         }
 
-        public override string ToString()
+        private int GetDatabaseType()
         {
-            return info;
+            if (string.IsNullOrEmpty(this.info))
+            {
+                return COUNTRY_EDITION;
+            }
+            else
+            {
+                // Get the type code from the database info string and then
+                // subtract 105 from the value to preserve compatability with
+                // databases from April 2003 and earlier.
+                return Convert.ToInt32(this.info.Substring(4, 7)) - 105;
+            }
         }
     }
 }
