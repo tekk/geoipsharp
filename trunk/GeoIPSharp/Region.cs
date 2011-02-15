@@ -20,34 +20,18 @@
  */
 namespace MaxMind.GeoIP
 {
-
     /// <summary>
-    /// Represents a region of a country
+    /// Represents a region of a country.
     /// </summary>
     public class Region
     {
         /// <summary>
-        /// The containing country
-        /// </summary>
-        public string CountryCode { get; internal set; }
-
-        /// <summary>
-        /// The name of the containing country
-        /// </summary>
-        public string CountryName { get; internal set; }
-
-        /// <summary>
-        /// The name of the region
-        /// </summary>
-        public string Name { get; internal set; }
-
-        /// <summary>
-        /// Creates a new empty region
+        /// Initializes a new instance of the MaxMind.GeoIP.Region class.
         /// </summary>
         public Region() { }
 
         /// <summary>
-        /// Creates a new empty region specifying the country code, 
+        /// Initializes a new instance of the MaxMind.GeoIP.Region class specifying the country code, 
         /// country name and region name
         /// </summary>
         /// <param name="countryCode"></param>
@@ -59,5 +43,20 @@ namespace MaxMind.GeoIP
             this.CountryName = countryName;
             this.Name = name;
         }
+
+        /// <summary>
+        /// Gets the containing country.
+        /// </summary>
+        public string CountryCode { get; internal set; }
+
+        /// <summary>
+        /// Gets the name of the containing country.
+        /// </summary>
+        public string CountryName { get; internal set; }
+
+        /// <summary>
+        /// Gets the name of the region
+        /// </summary>
+        public string Name { get; internal set; }
     }
 }
