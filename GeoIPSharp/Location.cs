@@ -19,8 +19,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 namespace MaxMind.GeoIP
-{
-
+{}
     using System;
 
     /// <summary>
@@ -40,11 +39,20 @@ namespace MaxMind.GeoIP
         public string RegionName { get; set; }
         public int MetroCode { get; set; }
 
+        /// <summary>
+        /// The earths diameter in KM.
+        /// </summary>
         private static double EARTH_DIAMETER = 2 * 6378.2;
-        private static double PI = 3.14159265;
-        private static double RAD_CONVERT = PI / 180;
 
-        public double Distance(Location loc)
+        private static double RAD_CONVERT = Math.PI / 180;
+
+
+        /// <summary>
+        /// Gets the distance from the current location to the given location.
+        /// </summary>
+        /// <param name="loc">The end point which to measure to.</param>
+        /// <returns></returns>
+        public double DistanceFrom(Location loc)
         {
             double delta_lat, delta_lon;
             double temp;

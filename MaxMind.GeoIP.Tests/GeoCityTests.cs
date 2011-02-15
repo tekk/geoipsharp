@@ -56,6 +56,24 @@
 
         }
 
+        [Test]
+        public void GetRegion()
+        {
+            // IP Address obtained by pinging google.com
+            IPAddress input = IPAddress.Parse("66.102.9.147");
+            Region result = service.GetRegion(input);
+            Assert.That(result.CountryCode, Is.EqualTo("US"));
+        }
+
+        [Test]
+        public void GetOrganisation()
+        {
+            // IP Address obtained by pinging google.com
+            IPAddress input = IPAddress.Parse("66.102.9.147");
+            string result = service.GetOrganisation(input);
+            Assert.That(result, Is.EqualTo("US"));
+        }
+
         #endregion
 
     }
